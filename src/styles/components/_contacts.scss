@@ -1,0 +1,12 @@
+@use '../utils/helpers' as *;
+
+.contacts {
+  @extend %d-flex-ai-center;
+  gap: 0 32px;
+}
+
+.contacts__link {
+  @extend %ff-ext-medium;
+  @include fs-lh(15px,18px);
+  letter-spacing: -0.01em;
+}

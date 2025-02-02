@@ -1,0 +1,15 @@
+@mixin wh($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin pos($top, $left, $pos: absolute) {
+  top: $top;
+  left: $left;
+  position: $pos;
+}
+
+@mixin fs-lh($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
+};

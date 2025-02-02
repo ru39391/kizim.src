@@ -1,0 +1,39 @@
+@use '../utils/helpers' as *;
+
+.nav {
+  @include wh(100%);
+  @include pos(0,0,fixed);
+  padding: 16px;
+  color: $color-white;
+  background-color: $color-dark;
+}
+
+.nav__container {
+  @extend %d-flex-column;
+  height: 100%;
+  gap: 48px 0;
+}
+
+.nav__wrapper {
+  @extend %d-flex-column;
+  flex-grow: 1;
+}
+
+.nav__list {
+  @extend %d-flex-column;
+  flex-grow: 1;
+  gap: 4px 0;
+}
+
+.nav__link {
+  @extend %ff-ext-medium;
+  @include fs-lh(20px,24px);
+  display: block;
+  padding: 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.nav__footer {
+  @extend %d-flex-column;
+  gap: 24px 0;
+}

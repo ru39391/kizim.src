@@ -13,7 +13,7 @@ const renderData = (tpl: Template): Node[] => {
 
 const fetchTemplate = async (): Template => {
   try {
-    const res = await fetch('src/assets/tpl.twig');
+    const res = await fetch('src/assets/templates/tpl.twig');
     const data = await res.text();
 
     return Twig.twig({ data });
