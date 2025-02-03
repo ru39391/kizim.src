@@ -6,6 +6,10 @@
   padding: 16px;
   color: $color-white;
   background-color: $color-dark;
+
+  &.is-visible {
+
+  }
 }
 
 .nav__container {

@@ -8,6 +8,15 @@
   letter-spacing: -0.01em;
 }
 
+.logo__pic {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(48px);
+  @include fw(48px);
+  border-radius: 7px;
+  background-color: $color-white;
+}
+
 .logo__container {
   @extend %d-flex-column;
   gap: 2px 0;

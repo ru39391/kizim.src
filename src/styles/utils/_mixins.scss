@@ -3,6 +3,11 @@
   height: $height;
 }
 
+@mixin fw($width) {
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
 @mixin pos($top, $left, $pos: absolute) {
   top: $top;
   left: $left;

@@ -1,16 +1,19 @@
+{% set icons = ['rutube', 'instagram', 'tg', 'vk', 'wapp', 'youtube'] %}
+
 <header class="header">
-	<nav class="nav">
+	<nav class="nav is-visible">
 		<div class="nav__container container">
 			<div class="nav__header">
 				<a class="logo" href="/">
+					<span class="logo__pic"></span>
 					<span class="logo__container">
 						<span class="logo__title">Ирина Кизим</span>
 						<span class="logo__subtitle">Стратегия | Рост | Результат</span>
 					</span>
 				</a>
-				<button class="nav__toggler" type="button">
-					<span class="nav__icon-visible"></span>
-					<span class="nav__icon-hidden"></span>
+				<button class="nav__toggler js-nav-toggler" type="button">
+					<span class="nav__icon-visible"><img src="src/assets/icons/nav-icon.svg" alt="" /></span>
+					<span class="nav__icon-hidden"><img src="src/assets/icons/close-icon.svg" alt="" /></span>
 				</button>
 			</div>
 			<div class="nav__wrapper">
@@ -37,7 +40,11 @@
 						<a class="contacts__link" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
 					</div>
 					<div class="social">
-						<a class="social__link" href="#" rel="nofollow"></a>
+            {% for icon in icons %}
+              <a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+                <img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt="" />
+              </a>
+            {% endfor %}
 					</div>
 				</div>
 			</div>

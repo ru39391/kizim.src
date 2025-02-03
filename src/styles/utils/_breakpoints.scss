@@ -1,0 +1,13 @@
+$md-max-value: 1199px;
+$sm-max-value: 991px;
+$xsm-max-value: 767px;
+$xxsm-max-value: 575px;
+
+$lg-min-value: $md-max-value + 1;
+$md-min-value: $sm-max-value + 1;
+$sm-min-value: $xsm-max-value + 1;
+$xsm-min-value: $xxsm-max-value + 1;
+
+$md-range: ($md-min-value, $md-max-value);
+$sm-range: ($sm-min-value, $sm-max-value);
+$xsm-range: ($xsm-min-value, $xsm-max-value);
