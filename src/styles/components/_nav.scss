@@ -8,8 +8,36 @@
   background-color: $color-dark;
 
   &.is-visible {
+    .nav__icon-visible {
+      display: none;
+    }
 
+    .nav__icon-hidden {
+      display: inherit;
+    }
   }
+}
+
+.nav__header {
+  @extend %d-flex-ai-center;
+  justify-content: space-between;
+}
+
+.nav__toggler {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+
+  @media #{$breakpoint-up-sm} {
+    display: none;
+  }
+}
+
+.nav__icon-visible {
+  display: inherit;
+}
+
+.nav__icon-hidden {
+  display: none;
 }
 
 .nav__container {
