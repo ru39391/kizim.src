@@ -1,7 +1,7 @@
 {% set icons = ['rutube', 'instagram', 'tg', 'vk', 'wapp', 'youtube'] %}
 
 <header class="header">
-	<nav class="nav is-visible">
+	<nav class="nav">
 		<div class="nav__container container">
 			<div class="nav__header">
 				<a class="logo" href="/">
@@ -35,61 +35,70 @@
 					</li>
 				</ul>
 				<div class="nav__footer">
-					<div class="contacts">
+					<div class="nav__contacts contacts">
 						<a class="contacts__link" href="tel:+79508558406">+7 950 855 8406</a>
 						<a class="contacts__link" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
 					</div>
-					<div class="social">
-            {% for icon in icons %}
-              <a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
-                <img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt="" />
-              </a>
-            {% endfor %}
+					<div class="nav__social">
+            <div class="social">
+              {% for icon in icons %}
+                <a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+                  <img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt="" />
+                </a>
+              {% endfor %}
+            </div>
+            <button class="nav__btn btn btn_type_row" type="button">
+              Заказать проект
+              <img src="src/assets/icons/arrow-icon.svg" alt="" />
+            </button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<div class="header__wrapper container">
-		<div class="header__top">
-			<div class="header__reviews">
-				<div class="header__reviews-title">Комлексное обучение для вашей команды</div>
-				<div class="header__reviews-row">
-					<div class="header__reviews-item"></div>
-					<div class="header__reviews-item header__reviews-item_type_counter">+21</div>
-				</div>
-				<div class="header__reviews-subtitle">24 положительных отзыва</div>
-			</div>
-			<div class="header__title">Ирина Кизим</div>
-			<div class="header__form">
-				<form class="form" action="#" method="post">
-					<fieldset class="form__fieldset">
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__name"/>
-							<label class="form__label">Ваше имя</label>
-						</div>
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__phone"/>
-							<label class="form__label">+7 (999) 999-99-99</label>
-						</div>
-						<div class="form__item">
-							<input class="form__toggler form__toggler_type_checkbox" type="checkbox" name="consult__policy"/>
-							<label class="form__label">
-								<span class="form__toggler-icon"></span>
-								Даю согласие на обработку персональных данных
-							</label>
-						</div>
-					</fieldset>
-					<button class="btn" type="button">Заказать программу обучения</button>
-				</form>
-			</div>
-		</div>
-		<div class="header__bottom">
-			<div class="header__bottom-feature">Тренер-методолог</div>
-			<div class="header__bottom-feature">Бизнес-консультант</div>
-			<div class="header__bottom-feature">Передаю знания для решения задач</div>
-			<div class="header__bottom-feature">Эксперт-практик в области продаж, коммуникации и формирования команд</div>
-		</div>
+	<div class="header__wrapper">
+    <img class="header__pic" src="src/assets/img/header-pic.png" alt="" />
+		<div class="header__container">
+      <div class="header__top container">
+          <div class="header__reviews">
+            <div class="header__reviews-title">Комлексное обучение для вашей команды</div>
+            <div class="header__reviews-row">
+              <div class="header__reviews-item"></div>
+              <div class="header__reviews-item header__reviews-item_type_counter">+21</div>
+            </div>
+            <div class="header__reviews-subtitle">24 положительных отзыва</div>
+          </div>
+          <div class="header__title">Ирина Кизим</div>
+          <div class="header__form">
+            <form class="form" action="#" method="post">
+              <fieldset class="form__fieldset">
+                <div class="form__item">
+                  <input class="form__field" type="text" value="" name="consult__name"/>
+                  <label class="form__label">Ваше имя</label>
+                </div>
+                <div class="form__item">
+                  <input class="form__field" type="text" value="" name="consult__phone"/>
+                  <label class="form__label">+7 (999) 999-99-99</label>
+                </div>
+                <div class="form__item">
+                  <input class="form__toggler form__toggler_type_checkbox" type="checkbox" name="consult__policy"/>
+                  <label class="form__label">
+                    <span class="form__toggler-icon"></span>
+                    Даю согласие на обработку персональных данных
+                  </label>
+                </div>
+              </fieldset>
+              <button class="btn" type="button">Заказать программу обучения</button>
+            </form>
+          </div>
+      </div>
+      <div class="header__bottom container">
+        <div class="header__bottom-feature">Тренер-методолог</div>
+        <div class="header__bottom-feature">Бизнес-консультант</div>
+        <div class="header__bottom-feature">Передаю знания для решения задач</div>
+        <div class="header__bottom-feature">Эксперт-практик в области продаж, коммуникации и формирования команд</div>
+      </div>
+    </div>
 	</div>
 </header>
 

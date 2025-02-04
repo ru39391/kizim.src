@@ -1,0 +1,7 @@
+@use '../utils/helpers' as *;
+
+.container {
+  @include mx(auto);
+  @include px(16px);
+  max-width: 1680px;
+}

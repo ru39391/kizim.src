@@ -1,13 +1,30 @@
 @use '../utils/helpers' as *;
 
 .nav {
-  @include wh(100%);
+  @include wh(100%, auto);
   @include pos(0,0,fixed);
-  padding: 16px;
+  padding: 16px 0;
+  overflow: hidden;
   color: $color-white;
-  background-color: $color-dark;
+  transition: all .3s ease;
+
+  @media #{$breakpoint-up-lg} {
+    position: static;
+  }
 
   &.is-visible {
+    height: 100%;
+    background-color: $color-dark;
+
+    @media #{$breakpoint-up-sm} {
+      height: auto;
+    }
+
+    .nav__wrapper {
+      display: flex;
+      animation: show 0.5s;
+    }
+
     .nav__icon-visible {
       display: none;
     }
@@ -21,13 +38,17 @@
 .nav__header {
   @extend %d-flex-ai-center;
   justify-content: space-between;
+
+  @media #{$breakpoint-up-lg} {
+    flex-grow: 1;
+  }
 }
 
 .nav__toggler {
   @extend %d-flex-column;
   @extend %d-flex-centered;
 
-  @media #{$breakpoint-up-sm} {
+  @media #{$breakpoint-up-lg} {
     display: none;
   }
 }
@@ -44,17 +65,62 @@
   @extend %d-flex-column;
   height: 100%;
   gap: 48px 0;
+
+  @media #{$breakpoint-up-md} {
+    gap: 24px 0;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .nav__wrapper {
-  @extend %d-flex-column;
+  display: none;
   flex-grow: 1;
+  flex-direction: column;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 48px 0;
+  }
+
+  @media #{$breakpoint-up-md} {
+    gap: 64px 0;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    gap: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .nav__list {
   @extend %d-flex-column;
   flex-grow: 1;
   gap: 4px 0;
+
+  @media #{$breakpoint-only-sm} {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto,320px));
+    grid-auto-rows: min-content;
+    justify-items: start;
+  }
+
+  @media #{$breakpoint-up-md} {
+    align-items: center;
+    flex-direction: row;
+    gap: 0 32px;
+  }
+}
+
+.nav__item {
+  @media #{$breakpoint-only-md} {
+    flex-grow: 1;
+    max-width: 250px;
+  }
 }
 
 .nav__link {
@@ -63,9 +129,59 @@
   display: block;
   padding: 12px 0;
   letter-spacing: -0.01em;
+
+  @media #{$breakpoint-up-md} {
+    padding: 0 30px 0 0;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include fs-lh(15px,18px);
+    padding: 0;
+  }
 }
 
 .nav__footer {
   @extend %d-flex-column;
   gap: 24px 0;
+
+  @media #{$breakpoint-up-sm} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav__contacts {
+  @media #{$breakpoint-up-lg} {
+    display: none;
+  }
+}
+
+.nav__social {
+  @extend %d-flex-ai-center;
+  gap: 0 16px;
+
+  @media #{$breakpoint-up-lg} {
+    gap: 0 24px;
+  }
+}
+
+.nav__btn {
+  display: none;
+
+  @media #{$breakpoint-up-sm} {
+    display: flex;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

@@ -8,7 +8,7 @@
   max-width: $width;
 }
 
-@mixin pos($top, $left, $pos: absolute) {
+@mixin pos($top, $left: $top, $pos: absolute) {
   top: $top;
   left: $left;
   position: $pos;
@@ -18,3 +18,13 @@
   font-size: $fs;
   line-height: $lh;
 };
+
+@mixin mx($ml, $mr: $ml) {
+  margin-left: $ml;
+  margin-right: $mr;
+}
+
+@mixin px($pl, $pr: $pl) {
+  padding-left: $pl;
+  padding-right: $pr;
+}
