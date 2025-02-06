@@ -1,6 +1,7 @@
 @use '../utils/helpers' as *;
 
 .header {
+  padding: 330px 0 40px;
   background: url(src/assets/img/header-bg.jpg) no-repeat top center scroll $color-light;
   background-size: cover;
 }
@@ -15,19 +16,36 @@
 
 .header__container {
   @extend %d-flex-column;
-  @include pos(0);
-  @include wh(100%);
+
+  @media #{$breakpoint-up-lg} {
+    @include pos(0);
+    @include wh(100%);
+  }
 }
 
 .header__top {
+  @extend %d-flex-column;
   width: 100%;
   flex-grow: 1;
+  gap: 32px 0;
+}
+
+.header__title {
+  @include fs-lh(54px,50px);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  color: $color-white;
+  margin: 0 -4px;
 }
 
 .header__bottom {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: none;
+
+  @media #{$breakpoint-up-lg} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .header__bottom-feature {
@@ -36,4 +54,60 @@
   text-align: center;
   letter-spacing: -0.01em;
   color: $color-white;
+}
+
+.header__reviews {
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "row subtitle .";
+  gap: 12px 16px;
+}
+
+.header__reviews-title {
+  @include fs-lh(18px,22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-white;
+  grid-area: title;
+}
+
+.header__reviews-row {
+  @extend %d-flex-ai-center;
+  grid-area: row;
+}
+
+.header__reviews-item {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @extend %ff-ext-medium;
+  @include wh(32px);
+  @include fw(32px);
+  @include fs-lh(10px,11px);
+  letter-spacing: -0.01em;
+  color: $color-gray;
+  margin: 0 0 0 -10px;
+
+  &.header__reviews-item_type_counter {
+    border-radius: 50%;
+    border: 2px solid $color-white;
+    background-color: $color-gray-light;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.header__reviews-img {
+  border-radius: 50%;
+  border: 2px solid $color-white;
+}
+
+.header__reviews-subtitle {
+  @include fs-lh(13px,16px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: $color-white;
+  grid-area: subtitle;
 }

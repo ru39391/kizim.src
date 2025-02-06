@@ -57,13 +57,15 @@
 		</div>
 	</nav>
 	<div class="header__wrapper">
-    <img class="header__pic" src="src/assets/img/header-pic.png" alt="" />
+    <img class="header__pic" src="src/assets/img/header-pic.png" alt="" style="display:none;" />
 		<div class="header__container">
       <div class="header__top container">
           <div class="header__reviews">
-            <div class="header__reviews-title">Комлексное обучение для вашей команды</div>
+            <div class="header__reviews-title">Комлексное обучение<br />для вашей команды</div>
             <div class="header__reviews-row">
-              <div class="header__reviews-item"></div>
+              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
+              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
+              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
               <div class="header__reviews-item header__reviews-item_type_counter">+21</div>
             </div>
             <div class="header__reviews-subtitle">24 положительных отзыва</div>
@@ -81,14 +83,14 @@
                   <label class="form__label">+7 (999) 999-99-99</label>
                 </div>
                 <div class="form__item">
-                  <input class="form__toggler form__toggler_type_checkbox" type="checkbox" name="consult__policy"/>
-                  <label class="form__label">
+                  <input class="form__toggler form__toggler_type_checkbox" type="checkbox" id="consult__policy" />
+                  <label class="form__label" for="consult__policy">
                     <span class="form__toggler-icon"></span>
                     Даю согласие на обработку персональных данных
                   </label>
                 </div>
               </fieldset>
-              <button class="btn" type="button">Заказать программу обучения</button>
+              <button class="btn btn-plain btn-inverted" type="button">Заказать программу обучения</button>
             </form>
           </div>
       </div>

@@ -10,4 +10,20 @@
   border-radius: 4px;
   background-color: $color-darken;
   border: 2px solid rgba(255,255,255,.2);
+
+  &.btn-plain {
+    @extend %d-flex-column;
+    @extend %d-flex-centered;
+    @include fs-lh(16px,20px);
+    width: 100%;
+    padding: 6px 12px;
+    letter-spacing: -0.01em;
+    border: 6px solid rgba(255,255,255,.16);
+  }
+
+  &.btn-inverted {
+    color: $color-darker;
+    background-color: $color-white;
+
+  }
 }

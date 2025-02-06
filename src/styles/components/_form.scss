@@ -1,0 +1,43 @@
+@use '../utils/helpers' as *;
+
+.form__fieldset {
+  @extend %d-flex-column;
+  border: 0;
+  gap: 8px 0;
+  margin: 0 0 40px;
+}
+
+.form__item {
+  overflow: hidden;
+  position: relative;
+}
+
+.form__field {
+  @include fs-lh(16px,22px);
+  font-weight: 500;
+  padding: 16px;
+  color: rgba(255, 255, 255, .5);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, .1);
+
+  & + .form__label {
+    @include pos(0,0);
+    @include fs-lh(16px,22px);
+    font-weight: 500;
+    right: 0;
+    height: 100%;
+    padding: 16px;
+    pointer-events: none;
+  }
+
+  &:focus + .form__label {
+    display: none;
+  }
+}
+
+.form__label {
+  @include fs-lh(14px,1);
+  font-weight: 600;
+  color: rgba(255, 255, 255, .5);
+}
