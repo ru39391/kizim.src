@@ -37,3 +37,11 @@
   padding-left: $pl;
   padding-right: $pr;
 }
+
+@mixin border($bw, $bc, $bs: solid) {
+  border: {
+    width: $bw;
+    color: $bc;
+    style: $bs;
+  }
+}

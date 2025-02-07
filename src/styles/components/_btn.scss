@@ -19,6 +19,10 @@
     padding: 6px 12px;
     letter-spacing: -0.01em;
     box-shadow: 0 0 0 6px rgba(255,255,255,.16);
+
+    @media #{$breakpoint-up-sm} {
+      padding: 18px;
+    }
   }
 
   &.btn-inverted {
