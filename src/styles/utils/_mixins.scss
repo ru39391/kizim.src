@@ -1,3 +1,12 @@
+@mixin before() {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+  }
+}
+
 @mixin wh($width, $height: $width) {
   width: $width;
   height: $height;

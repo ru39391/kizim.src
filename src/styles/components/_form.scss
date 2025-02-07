@@ -4,7 +4,7 @@
   @extend %d-flex-column;
   border: 0;
   gap: 8px 0;
-  margin: 0 0 40px;
+  margin: 0 0 16px;
 }
 
 .form__item {
@@ -15,6 +15,7 @@
 .form__field {
   @include fs-lh(16px,22px);
   font-weight: 500;
+  width: 100%;
   padding: 16px;
   color: rgba(255, 255, 255, .5);
   border-radius: 8px;
@@ -40,4 +41,62 @@
   @include fs-lh(14px,1);
   font-weight: 600;
   color: rgba(255, 255, 255, .5);
+}
+
+.form-toggler-row {
+  margin: 0 0 40px;
+}
+
+.form-toggler {
+  & + .form__label {
+    @extend %d-flex-ai-center;
+    gap: 0 8px;
+    cursor: pointer;
+  }
+
+  &.form-toggler_type_checkbox {
+    display: none;
+
+    &:checked + .form__label {
+      .form-toggler-icon {
+        &:before {
+          display: block;
+        }
+
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.form-toggler-icon {
+  @include before;
+  @include wh(24px);
+  @include fw(24px);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, .5);
+
+  &:before {
+    @include wh(14px,2px);
+    left: 6px;
+    bottom: 4px;
+    display: none;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+    background-color: rgba(255, 255, 255, .5);
+  }
+
+  &:after {
+    @include wh(6px,2px);
+    content: '';
+    position: absolute;
+    left: 4px;
+    bottom: 9px;
+    display: none;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    background-color: rgba(255, 255, 255, .5);
+  }
 }
