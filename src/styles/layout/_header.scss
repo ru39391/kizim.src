@@ -54,6 +54,10 @@
     gap: 45px;
   }
 
+  @media #{$breakpoint-only-md} {
+    @include px(32px);
+  }
+
   @media #{$breakpoint-up-md} {
     gap: 140px;
     justify-content: space-between;

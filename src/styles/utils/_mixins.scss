@@ -38,6 +38,11 @@
   padding-right: $pr;
 }
 
+@mixin py($pt, $pb: $pt) {
+  padding-top: $pt;
+  padding-bottom: $pb;
+}
+
 @mixin border($bw, $bc, $bs: solid) {
   border: {
     width: $bw;
