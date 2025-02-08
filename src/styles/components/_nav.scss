@@ -9,10 +9,6 @@
   color: $color-white;
   transition: all .3s ease;
 
-  @media #{$breakpoint-up-lg} {
-    position: static;
-  }
-
   &.is-visible {
     height: 100%;
     background-color: $color-dark;
@@ -74,6 +70,10 @@
   @media #{$breakpoint-up-lg} {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 1712px;
   }
 }
 

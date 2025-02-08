@@ -1,5 +1,11 @@
 @use '../utils/helpers' as *;
 
+.form {
+  &.form_width_min {
+    max-width: 328px;
+  }
+}
+
 .form__fieldset {
   @extend %d-flex-column;
   border: 0;
