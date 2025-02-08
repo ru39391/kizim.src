@@ -11,6 +11,10 @@
   @media #{$breakpoint-up-lg} {
     @include py(160px);
   }
+
+  &.section_bg_dark {
+    background-color: $color-brown-dark;
+  }
 }
 
 .section-container {
@@ -21,7 +25,7 @@
   }
 }
 
-.section-subtitle {
+.section-title {
   @include fs-lh(32px,35px);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -37,5 +41,13 @@
   @media #{$breakpoint-up-md} {
     text-align: left;
     margin: 0 0 40px;
+  }
+
+  &.section-title_ta_center {
+    text-align: center;
+  }
+
+  &.section-title_color_white {
+    color: $color-white;
   }
 }
