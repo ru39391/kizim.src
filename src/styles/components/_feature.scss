@@ -1,0 +1,28 @@
+@use '../utils/helpers' as *;
+
+.feature-list {
+  margin: 0 0 60px;
+}
+
+.feature {
+  margin: 0 0 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.feature__title {
+  @include fs-lh(24px,26px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $color-gray-dark;
+  margin: 0 0 8px;
+}
+
+.feature__desc {
+  @include fs-lh(15px,18px);
+  color: $color-default;
+  opacity: .8;
+}
