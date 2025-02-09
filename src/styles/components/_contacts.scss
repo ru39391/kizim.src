@@ -9,6 +9,7 @@
   @extend %ff-ext-medium;
   @include fs-lh(15px,18px);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 
   &.contacts__link_color_white {
     color: $color-white;

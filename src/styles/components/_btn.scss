@@ -33,4 +33,12 @@
   &.btn-lg {
     padding: 18px;
   }
+
+  &.btn-xl {
+    padding: 18px;
+
+    @media #{$breakpoint-up-xl} {
+      padding: 25px;
+    }
+  }
 }

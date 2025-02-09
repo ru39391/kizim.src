@@ -43,6 +43,11 @@
   padding-bottom: $pb;
 }
 
+@mixin zi($zi, $pos: relative) {
+  z-index: $zi;
+  position: $pos;
+}
+
 @mixin border($bw, $bc, $bs: solid) {
   border: {
     width: $bw;

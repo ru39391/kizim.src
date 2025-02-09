@@ -2,25 +2,89 @@
 
 .footer {
   @extend %d-flex-column;
+  @include before;
   gap: 60px 0;
   padding: 40px 0 16px;
   background: url(src/assets/img/header-bg.jpg) no-repeat top center scroll $color-light;
   background-size: cover;
+
+  @media #{$breakpoint-up-sm} {
+    padding: 74px 0 16px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include px(16px);
+    gap: 46px 0;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    padding-top: 120px;
+    gap: 172px 0;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    padding-top: 160px;
+  }
+
+  &:before {
+    @media #{$breakpoint-up-sm} {
+      @include pos(0);
+      @include wh(100%);
+      z-index: 1;
+      background: url(src/assets/img/footer-pic-mobile.png) no-repeat right bottom scroll rgba(0,0,0,0);
+    }
+
+    @media #{$breakpoint-up-md} {
+      background-image: url(src/assets/img/footer-pic-tablet.png);
+    }
+
+    @media #{$breakpoint-up-lg} {
+      background-image: url(src/assets/img/footer-pic-desktop.png);
+    }
+
+    @media #{$breakpoint-up-xl} {
+      width: 92%;
+      background-image: url(src/assets/img/footer-pic.png);
+    }
+  }
 }
 
 .footer__col {
   @extend %d-flex-column;
-  gap: 32px 0;
+  gap: 32px 24px;
+
+  @media #{$breakpoint-up-xl} {
+    row-gap: 64px;
+  }
+
+  &.footer__col_type_row {
+    @media #{$breakpoint-up-sm} {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &.footer__col_width_lg {
+    @media #{$breakpoint-up-lg} {
+      flex-grow: 1;
+    }
+  }
 }
 
 .footer__top {
+  @include zi(2);
   width: 100%;
 }
 
 .footer__bottom {
   @extend %d-flex-column;
+  @include zi(2);
   gap: 32px 0;
   width: 100%;
+
+  @media #{$breakpoint-up-lg} {
+    flex-direction: row;
+  }
 }
 
 .footer__title {
@@ -28,10 +92,33 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   color: $color-white;
+
+  @media #{$breakpoint-up-md} {
+    font-size: 32px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(80px,72px);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    max-width: 720px;
+  }
 }
 
 .footer__nav {
   @extend %d-flex-column;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 0 16px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    flex-grow: 1;
+    justify-content: center;
+  }
 }
 
 .footer__nav-link {

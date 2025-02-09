@@ -33,5 +33,6 @@
 .logo__subtitle {
   @include fs-lh(14px,18px);
   font-weight: 400;
+  white-space: nowrap;
   color: color.adjust($color-white, $lightness: -30%);
 }
