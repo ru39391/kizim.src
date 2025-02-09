@@ -24,12 +24,14 @@
     @media #{$breakpoint-up-md} {
       padding: 0 0 8px;
     }
+
+    .section-title {
+      @include px(16px);
+    }
   }
 
   &.section_type_divider {
     @include before;
-    display:block;
-
     padding: 40px 0;
     background: url(src/assets/img/divider-bg.jpg) no-repeat center top scroll $color-brown-dark;
     background-size: cover;
@@ -106,8 +108,16 @@
     margin: 0 0 40px;
   }
 
+  &.section-title_fs_lg {
+    @media #{$breakpoint-up-lg} {
+      @include fs-lh(48px,52px);
+    }
+  }
+
   &.section-title_ta_center {
-    text-align: center;
+    @media #{$breakpoint-up-sm} {
+      text-align: center;
+    }
   }
 
   &.section-title_color_white {
