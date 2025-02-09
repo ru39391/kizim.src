@@ -31,11 +31,19 @@
   justify-content: space-between;
   padding: 16px;
   background-color: rgba(0,0,0,.2);
+
+  @media #{$breakpoint-up-xl} {
+    padding: 24px;
+  }
 }
 
 .card__header {
   @extend %d-flex-column;
   gap: 8px 0;
+
+  @media #{$breakpoint-up-xl} {
+    gap: 16px 0;
+  }
 }
 
 .card__title {
@@ -43,6 +51,10 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   color: $color-white;
+
+  @media #{$breakpoint-up-xl} {
+    font-size: 40px;
+  }
 }
 
 .card__subtitle {

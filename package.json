@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "swiper": "^11.2.2",
     "twig": "^1.17.1"
   }
 }

@@ -1,8 +1,41 @@
-.swiper-wrapper {
+@use '../utils/helpers' as *;
+
+.swiper {
+  .swiper-button {
+    @include wh(48px);
+    display: none;
+
+    @media #{$breakpoint-up-md} {
+      display: block;
+    }
+
+    &:after {
+      content: '';
+    }
+  }
 }
 
 .swiper-slide {
+  width: auto !important;
+  padding: 0 4px;
 }
 
-.swiper-nav {
+.swiper-button-prev {
+  @media #{$breakpoint-up-md} {
+    left: 55px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    left: 110px;
+  }
+}
+
+.swiper-button-next {
+  @media #{$breakpoint-up-md} {
+    right: 55px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    right: 110px;
+  }
 }

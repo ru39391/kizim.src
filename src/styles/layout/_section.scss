@@ -18,15 +18,11 @@
     background-color: $color-brown-dark;
   }
 
-  &.section_type_container {
-    @include px(16px);
-  }
-
   &.section_type_slides {
-    @include py(0,16px);
+    padding: 0 0 16px;
 
     @media #{$breakpoint-up-md} {
-      @include py(0,8px);
+      padding: 0 0 8px;
     }
   }
 
