@@ -12,8 +12,8 @@
 					</span>
 				</a>
 				<button class="nav__toggler js-nav-toggler" type="button">
-					<span class="nav__icon-visible"><img src="src/assets/icons/nav-icon.svg" alt="" /></span>
-					<span class="nav__icon-hidden"><img src="src/assets/icons/close-icon.svg" alt="" /></span>
+					<span class="nav__icon-visible"><img src="src/assets/icons/nav-icon.svg" alt=""/></span>
+					<span class="nav__icon-hidden"><img src="src/assets/icons/close-icon.svg" alt=""/></span>
 				</button>
 			</div>
 			<div class="nav__wrapper">
@@ -40,86 +40,86 @@
 						<a class="contacts__link" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
 					</div>
 					<div class="nav__social">
-            <div class="social">
-              {% for icon in icons %}
-                <a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
-                  <img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt="" />
-                </a>
-              {% endfor %}
-            </div>
-            <button class="nav__btn btn btn_type_row" type="button">
-              Заказать проект
-              <img src="src/assets/icons/arrow-icon.svg" alt="" />
-            </button>
+						<div class="social">
+							{% for icon in icons %}
+								<a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+									<img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt=""/>
+								</a>
+							{% endfor %}
+						</div>
+						<button class="nav__btn btn btn_type_row" type="button">
+							Заказать проект
+							<img src="src/assets/icons/arrow-icon.svg" alt=""/>
+						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
 	<div class="header__wrapper">
-      <div class="header__top container">
-          <div class="header__reviews">
-            <div class="header__reviews-title">Комлексное обучение<br />для вашей команды</div>
-            <div class="header__reviews-row">
-              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
-              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
-              <div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt="" /></div>
-              <div class="header__reviews-item header__reviews-item_type_counter">+21</div>
-            </div>
-            <div class="header__reviews-subtitle">24 положительных отзыва</div>
-          </div>
-          <div class="header__title">Ирина Кизим</div>
-          <div class="header__form">
-            <form class="form form_width_min" action="#" method="post">
-              <fieldset class="form__fieldset">
-                <div class="form__item">
-                  <input class="form__field" type="text" value="" name="consult__name"/>
-                  <label class="form__label">Ваше имя</label>
-                </div>
-                <div class="form__item">
-                  <input class="form__field" type="text" value="" name="consult__phone"/>
-                  <label class="form__label">+7 (999) 999-99-99</label>
-                </div>
-              </fieldset>
-              <div class="form-toggler-row">
-                <input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="consult__policy" />
-                <label class="form__label" for="consult__policy">
-                  <span class="form-toggler-icon"></span>
-                  Даю согласие на обработку персональных данных
-                </label>
-              </div>
-              <button class="btn btn-plain btn-inverted" type="button">Заказать программу обучения</button>
-            </form>
-          </div>
-      </div>
-      <div class="header__bottom container">
-        <div class="header__bottom-feature">Тренер-методолог</div>
-        <div class="header__bottom-feature">Бизнес-консультант</div>
-        <div class="header__bottom-feature">Передаю знания для решения задач</div>
-        <div class="header__bottom-feature">Эксперт-практик в области продаж, коммуникации и формирования команд</div>
-      </div>
+		<div class="header__top container">
+			<div class="header__reviews">
+				<div class="header__reviews-title">Комлексное обучение<br/>для вашей команды</div>
+				<div class="header__reviews-row">
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item header__reviews-item_type_counter">+21</div>
+				</div>
+				<div class="header__reviews-subtitle">24 положительных отзыва</div>
+			</div>
+			<div class="header__title">Ирина Кизим</div>
+			<div class="header__form">
+				<form class="form form_width_min" action="#" method="post">
+					<fieldset class="form__fieldset">
+						<div class="form__item">
+							<input class="form__field" type="text" value="" name="consult__name"/>
+							<label class="form__label">Ваше имя</label>
+						</div>
+						<div class="form__item">
+							<input class="form__field" type="text" value="" name="consult__phone"/>
+							<label class="form__label">+7 (999) 999-99-99</label>
+						</div>
+					</fieldset>
+					<div class="form-toggler-row">
+						<input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="consult__policy"/>
+						<label class="form__label" for="consult__policy">
+							<span class="form-toggler-icon"></span>
+							Даю согласие на обработку персональных данных
+						</label>
+					</div>
+					<button class="btn btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+				</form>
+			</div>
+		</div>
+		<div class="header__bottom container">
+			<div class="header__bottom-feature">Тренер-методолог</div>
+			<div class="header__bottom-feature">Бизнес-консультант</div>
+			<div class="header__bottom-feature">Передаю знания для решения задач</div>
+			<div class="header__bottom-feature">Эксперт-практик в области продаж, коммуникации и формирования команд</div>
+		</div>
 	</div>
 </header>
 
 <div class="section" style="display:none;">
 	<div class="section-container container">
-    <div class="section-col">
-      <div class="section-title">Экспертность</div>
-      <div class="feature-list">
-        <div class="feature">
-          <div class="feature__title">Глубокое понимание сферы продаж</div>
-          <div class="feature__desc">Многолетний опыт работы на продающих и руководящих должностях в данной сфере отражается в знании особенностей и тенденций рынка, благодаря чему, погружаясь в работу компании - становятся видны возможности и пути развития для увеличения финансового результата компании.
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature__title">Cоздание высокоэффективной команды</div>
-          <div class="feature__desc">Практические навыки в построении команды и внедрении эффективных методик работы, позволяют создавать стратегии развития индивидуально для каждой компании.</div>
-        </div>
-        <div class="feature">
-          <div class="feature__title">Индивидуальный подход</div>
-          <div class="feature__desc">Пошаговый план работы в каждом проекте формируется индивидуально, после анализа текущей ситуации в команде и профессиональных компетенций каждого сотрудника, путем проведения индивидуальных интервью.</div>
-        </div>
-      </div>
+		<div class="section-col">
+			<div class="section-title">Экспертность</div>
+			<div class="feature-list">
+				<div class="feature">
+					<div class="feature__title">Глубокое понимание сферы продаж</div>
+					<div class="feature__desc">Многолетний опыт работы на продающих и руководящих должностях в данной сфере отражается в знании особенностей и тенденций рынка, благодаря чему, погружаясь в работу компании - становятся видны возможности и пути развития для увеличения финансового результата компании.
+					</div>
+				</div>
+				<div class="feature">
+					<div class="feature__title">Cоздание высокоэффективной команды</div>
+					<div class="feature__desc">Практические навыки в построении команды и внедрении эффективных методик работы, позволяют создавать стратегии развития индивидуально для каждой компании.</div>
+				</div>
+				<div class="feature">
+					<div class="feature__title">Индивидуальный подход</div>
+					<div class="feature__desc">Пошаговый план работы в каждом проекте формируется индивидуально, после анализа текущей ситуации в команде и профессиональных компетенций каждого сотрудника, путем проведения индивидуальных интервью.</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="about">
@@ -189,39 +189,39 @@
 
 <div class="section section_bg_dark" style="display:none;">
 	<div class="container">
-    <div class="section-title section-title_ta_center section-title_color_white">Направления деятельности</div>
-    <ul class="directions">
-      <li class="directions__item">
-        <div class="directions__title">Проект в режиме “Коммерческий Директор на аутсорсинге”</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Командные тренинги</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Индивидуальный коучинг</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Подбор и обучение новых сотрудников</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Создание коммерческого подразделения компании</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Проект в режиме «Антикризисный менеджер коммерческого подразделения»</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Анализ конкурентов компании</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Разработка и внедрение новых инструментов продаж</div>
-        <div class="directions__desc">демонстрационный этаж на строительной площадке, скрипты и алгоритмы проведения личных и телефонных переговоров, внедрение чек-листов, регламенты и инструкции</div>
-      </li>
-      <li class="directions__item">
-        <div class="directions__title">Комплексная программа обучения</div>
-        <div class="directions__desc">Анализ бизнес-процессов с последующим внедрением улучшений по всем направлениям деятельности</div>
-      </li>
-    </ul>
-  </div>
+		<div class="section-title section-title_ta_center section-title_color_white">Направления деятельности</div>
+		<ul class="directions">
+			<li class="directions__item">
+				<div class="directions__title">Проект в режиме “Коммерческий Директор на аутсорсинге”</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Командные тренинги</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Индивидуальный коучинг</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Подбор и обучение новых сотрудников</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Создание коммерческого подразделения компании</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Проект в режиме «Антикризисный менеджер коммерческого подразделения»</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Анализ конкурентов компании</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Разработка и внедрение новых инструментов продаж</div>
+				<div class="directions__desc">демонстрационный этаж на строительной площадке, скрипты и алгоритмы проведения личных и телефонных переговоров, внедрение чек-листов, регламенты и инструкции</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Комплексная программа обучения</div>
+				<div class="directions__desc">Анализ бизнес-процессов с последующим внедрением улучшений по всем направлениям деятельности</div>
+			</li>
+		</ul>
+	</div>
 </div>
 
 <div class="section">
@@ -528,33 +528,34 @@
 	<div class="footer__top container">
 		<div class="footer__col">
 			<div class="footer__title">Заказать консультацию</div>
-			<form class="form" action="#" method="post">
+			<form class="form form_width_min" action="#" method="post">
 				<fieldset class="form__fieldset">
 					<div class="form__item">
-						<input class="form__field" type="text" value="" name="consult__name"/>
+						<input class="form__field" type="text" value="" name="order__name"/>
 						<label class="form__label">Ваше имя</label>
 					</div>
 					<div class="form__item">
-						<input class="form__field" type="text" value="" name="consult__phone"/>
+						<input class="form__field" type="text" value="" name="order__phone"/>
 						<label class="form__label">+7 (999) 999-99-99</label>
 					</div>
-					<div class="form__item">
-						<input class="form__toggler form__toggler_type_checkbox" type="checkbox" name="consult__policy"/>
-						<label class="form__label">
-							<span class="form__toggler-icon"></span>
-							Даю согласие на обработку персональных данных
-						</label>
-					</div>
 				</fieldset>
-				<button class="btn" type="button">Заказать программу обучения</button>
+				<div class="form-toggler-row">
+					<input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
+					<label class="form__label" for="order__policy">
+						<span class="form-toggler-icon"></span>
+						Даю согласие на обработку персональных данных
+					</label>
+				</div>
+				<button class="btn btn-lg btn-plain btn-inverted" type="button">Заказать программу обучения</button>
 			</form>
 		</div>
 	</div>
 	<div class="footer__bottom container">
 		<div class="footer__col footer__col_width_lg">
 			<a class="logo" href="/">
+				<span class="logo__pic"></span>
 				<span class="logo__container">
-					<span class="logo__title">Ирина Кизим</span>
+					<span class="logo__title logo__title_color_white">Ирина Кизим</span>
 					<span class="logo__subtitle">Стратегия | Рост | Результат</span>
 				</span>
 			</a>
@@ -568,11 +569,15 @@
 		</div>
 		<div class="footer__col footer__col_width_sm">
 			<div class="contacts">
-				<a class="contacts__link" href="tel:+79508558406">+7 950 855 8406</a>
-				<a class="contacts__link" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
+				<a class="contacts__link contacts__link_color_white" href="tel:+79508558406">+7 950 855 8406</a>
+				<a class="contacts__link contacts__link_color_white" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
 			</div>
 			<div class="social">
-				<a class="social__link" href="#" rel="nofollow"></a>
+				{% for icon in icons %}
+					<a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+						<img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt=""/>
+					</a>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

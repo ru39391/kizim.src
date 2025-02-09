@@ -1,6 +1,8 @@
 @use '../utils/helpers' as *;
 
 .section {
+  display: none;
+
   padding: 40px 0 60px;
   background-color: $color-light;
 

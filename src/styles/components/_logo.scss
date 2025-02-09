@@ -24,6 +24,10 @@
 
 .logo__title {
   @include fs-lh(16px,20px);
+
+  &.logo__title_color_white {
+    color: $color-white;
+  }
 }
 
 .logo__subtitle {
