@@ -80,10 +80,9 @@
 
 .form-desc {
   @include fs-lh(16px,22px);
+  @include color-white(0.3);
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: $color-white;
-  opacity: .7;
 }
 
 .form__fieldset {

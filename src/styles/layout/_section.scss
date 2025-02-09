@@ -18,6 +18,18 @@
     background-color: $color-brown-dark;
   }
 
+  &.section_type_container {
+    @include px(16px);
+  }
+
+  &.section_type_slides {
+    @include py(0,16px);
+
+    @media #{$breakpoint-up-md} {
+      @include py(0,8px);
+    }
+  }
+
   &.section_type_divider {
     @include before;
     display:block;
@@ -104,5 +116,13 @@
 
   &.section-title_color_white {
     color: $color-white;
+  }
+
+  &.section-title_mb_min {
+    margin: 0 0 24px;
+
+    @media #{$breakpoint-up-md} {
+      margin: 0 0 40px;
+    }
   }
 }

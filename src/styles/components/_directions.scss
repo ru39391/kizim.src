@@ -52,8 +52,7 @@
 
 .directions__desc {
   @include fs-lh(14px,16px);
+  @include color-white(0.4);
   font-weight: 500;
   letter-spacing: 0.02em;
-  opacity: .6;
-  color: $color-white;
 }

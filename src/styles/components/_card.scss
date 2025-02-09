@@ -1,0 +1,65 @@
+@use '../utils/helpers' as *;
+
+.card {
+  @include wh(280px,480px);
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+
+  @media #{$breakpoint-up-sm} {
+    width: 400px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    width: 604px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    width: 804px;
+  }
+}
+
+.card__img {
+  @include wh(100%);
+  object-fit: cover;
+}
+
+.card__wrapper {
+  @include pos(0);
+  @include wh(100%);
+  @extend %d-flex-column;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: rgba(0,0,0,.2);
+}
+
+.card__header {
+  @extend %d-flex-column;
+  gap: 8px 0;
+}
+
+.card__title {
+  @include fs-lh(24px,1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $color-white;
+}
+
+.card__subtitle {
+  @include fs-lh(16px,20px);
+  @include color-white(0.8);
+  font-weight: 600;
+}
+
+.card__btn {
+  @include fs-lh(16px,1);
+  letter-spacing: -0.01em;
+  text-align: left;
+  box-shadow: none;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, .1);
+  border-radius: 8px;
+  border: 4px solid rgba(255, 255, 255, .05);
+  padding: 8px 8px 8px 16px;
+  justify-content: space-between;
+}
