@@ -224,7 +224,7 @@
 	</div>
 </div>
 
-<div class="section">
+<div class="section" style="display:block;">
 	<div class="section-title">Обучающие программы</div>
 	<div class="programms swiper js-slides">
 		<div class="swiper-wrapper">
@@ -320,33 +320,33 @@
 	</div>
 </div>
 
-<div class="section" style="display:block;">
+<div class="section section_type_divider">
 	<div class="container">
-		<div class="section__col">
-			<div class="section__header">
-				<div class="section-title section-title_type_heading">Создание индивидуальной программы</div>
-				<div class="section-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
-				<form class="form" action="#" method="post">
-					<fieldset class="form__fieldset">
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__name"/>
-							<label class="form__label">Ваше имя</label>
-						</div>
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__phone"/>
-							<label class="form__label">+7 (999) 999-99-99</label>
-						</div>
-						<div class="form__item">
-							<input class="form__toggler form__toggler_type_checkbox" type="checkbox" name="consult__policy"/>
-							<label class="form__label">
-								<span class="form__toggler-icon"></span>
-								Даю согласие на обработку персональных данных
-							</label>
-						</div>
-					</fieldset>
-					<button class="btn" type="button">Заказать программу обучения</button>
-				</form>
+		<div class="form-container form-container_type_col">
+			<div class="form-header">
+				<div class="form-title">Создание индивидуальной программы</div>
+				<div class="form-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
 			</div>
+			<form class="form" action="#" method="post">
+				<fieldset class="form__fieldset">
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="text" value="" name="order__name"/>
+						<label class="form__label">Ваше имя</label>
+					</div>
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="text" value="" name="order__phone"/>
+						<label class="form__label">+7 (999) 999-99-99</label>
+					</div>
+				</fieldset>
+				<div class="form-toggler-row">
+					<input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
+					<label class="form__label form__label_fs_md" for="order__policy">
+						<span class="form-toggler-icon"></span>
+						Даю согласие на обработку персональных данных
+					</label>
+				</div>
+				<button class="btn btn-xl btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+			</form>
 		</div>
 	</div>
 </div>
@@ -526,8 +526,8 @@
 
 <footer class="footer">
 	<div class="footer__top container">
-		<div class="footer__col">
-			<div class="footer__title">Заказать консультацию</div>
+		<div class="form-container form-container_gap_xl">
+			<div class="form-title form-title_fs_xl">Заказать консультацию</div>
 			<form class="form form_width_max" action="#" method="post">
 				<fieldset class="form__fieldset">
 					<div class="form__item form__item_size_xl">

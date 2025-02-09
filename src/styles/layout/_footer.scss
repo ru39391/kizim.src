@@ -53,10 +53,6 @@
   @extend %d-flex-column;
   gap: 32px 24px;
 
-  @media #{$breakpoint-up-xl} {
-    row-gap: 64px;
-  }
-
   &.footer__col_type_row {
     @media #{$breakpoint-up-sm} {
       flex-direction: row;
@@ -84,24 +80,6 @@
 
   @media #{$breakpoint-up-lg} {
     flex-direction: row;
-  }
-}
-
-.footer__title {
-  @include fs-lh(24px,1);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: $color-white;
-
-  @media #{$breakpoint-up-md} {
-    font-size: 32px;
-  }
-
-  @media #{$breakpoint-up-xl} {
-    @include fs-lh(80px,72px);
-    font-weight: 600;
-    letter-spacing: -0.05em;
-    max-width: 720px;
   }
 }
 

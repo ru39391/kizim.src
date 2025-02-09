@@ -1,6 +1,14 @@
 @use '../utils/helpers' as *;
 
 .form {
+  @media #{$breakpoint-up-md} {
+    max-width: 480px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 720px;
+  }
+
   &.form_width_min {
     max-width: 328px;
   }
@@ -12,6 +20,70 @@
       max-width: 720px;
     }
   }
+}
+
+.form-container {
+  @extend %d-flex-column;
+  @include zi(2);
+  gap: 32px 0;
+
+  &.form-container_type_col {
+    @media #{$breakpoint-up-sm} {
+      width: 50%;
+      padding: 0 16px 0 0;
+    }
+
+    @media #{$breakpoint-up-md} {
+      padding: 0 32px 0 0;
+    }
+  }
+
+  &.form-container_gap_xl {
+    @media #{$breakpoint-up-xl} {
+      row-gap: 64px;
+    }
+  }
+}
+
+.form-header {
+  @extend %d-flex-column;
+  gap: 8px 0;
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 720px;
+  }
+}
+
+.form-title {
+  @include fs-lh(24px,1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $color-white;
+
+  @media #{$breakpoint-up-xl} {
+    font-size: 40px;
+  }
+
+  &.form-title_fs_xl {
+    @media #{$breakpoint-up-md} {
+      font-size: 32px;
+    }
+
+    @media #{$breakpoint-up-xl} {
+      @include fs-lh(80px,72px);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      max-width: 720px;
+    }
+  }
+}
+
+.form-desc {
+  @include fs-lh(16px,22px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: $color-white;
+  opacity: .7;
 }
 
 .form__fieldset {
