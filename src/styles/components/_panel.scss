@@ -1,0 +1,72 @@
+@use '../utils/helpers' as *;
+
+.panel {
+  display: flex;
+  min-height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.08);
+}
+
+.panel__aside {
+  @include fw(180px);
+  position: relative;
+  background-color: $color-graphite;
+}
+
+.panel__logo {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include pos(50%);
+  @include wh(116px,50px);
+  padding: 12px;
+  border-radius: 8px;
+  background-color: $color-white;
+  transform: translate(-58px,-25px)
+}
+
+.panel__img {
+  @include wh(100%);
+  object-fit: contain;
+}
+
+.panel__wrapper {
+  @extend %d-flex-column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 16px 0;
+  padding: 16px;
+}
+
+.panel__header {
+  @extend %d-flex-column;
+  gap: 2px 0;
+  color: #383A3F;
+}
+
+.panel__title {
+  @include fs-lh(16px,22px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.panel__subtitle {
+  @include fs-lh(12px,16px);
+  letter-spacing: -0.01em;
+  opacity: .7;
+}
+
+.panel__footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel__btn {
+  @extend %d-flex-ai-center;
+  @extend %ff-ext-medium;
+  @include fs-lh(14px,18px);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  gap: 0 4px;
+  color: #383A3F;
+}

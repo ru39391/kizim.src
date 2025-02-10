@@ -28,6 +28,11 @@
   line-height: $lh;
 };
 
+@mixin offset($m, $p: $m) {
+  margin: $m;
+  padding: $p;
+}
+
 @mixin mx($ml, $mr: $ml) {
   margin-left: $ml;
   margin-right: $mr;

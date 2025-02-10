@@ -1,0 +1,80 @@
+@use '../utils/helpers' as *;
+
+.modal-overlay {
+  @include wh(100%);
+  @include pos(0,0,fixed);
+  z-index: 1060;
+  background-color: rgba(0,0,0,.4);
+}
+
+.modal {
+  @include wh(100%);
+  @include pos(0);
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  padding: 16px;
+
+  @media #{$breakpoint-up-lg} {
+    @include py(80px);
+  }
+}
+
+.modal-wrapper {
+  @extend %d-flex-column;
+  //@include wh(100%);
+  width: 100%;
+  max-width: 960px;
+  padding: 40px 0 0;
+  overflow: hidden;
+  position: relative;
+
+  @media #{$breakpoint-up-md} {
+    padding: 80px 0 0;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    padding: 120px 0 0;
+  }
+}
+
+.modal-container {
+  @include mx(auto);
+  width: 100%;
+  max-width: 720px;
+}
+
+.modal-header {
+  @include pos(0);
+  @include wh(100%,40px);
+  border-radius: 24px 24px 0 0;
+  background-color: $color-graphite;
+
+  @media #{$breakpoint-up-md} {
+    height: 80px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    height: 120px;
+  }
+}
+
+.modal-content {
+  padding: 54px 16px 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-lg} {
+    margin-right: -16px;
+  }
+}
+
+.modal-footer {
+  padding: 24px 16px 40px;
+  border-radius: 0 0 24px 24px;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-lg} {
+    padding-bottom: 64px;
+  }
+}
