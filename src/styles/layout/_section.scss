@@ -12,8 +12,50 @@
     @include py(160px);
   }
 
+  &.section_bg_logo {
+    @include before;
+    overflow: hidden;
+
+    @media #{$breakpoint-up-sm} {
+      overflow: inherit;
+    }
+
+    &:before {
+      @include pos(0);
+      bottom: 155px;
+      width: 578px;
+      z-index: 1;
+      pointer-events: none;
+      background: url(../assets/img/logo-bg-light.png) no-repeat left bottom scroll rgba(0,0,0,0);
+      background-size: 100% auto;
+
+      @media #{$breakpoint-up-sm} {
+        top: auto;
+        height: 640px;
+        bottom: -200px;
+      }
+
+      @media #{$breakpoint-up-md} {
+        @include wh(100%);
+        top: 0;
+        bottom: 0;
+        background-size: auto 100%;
+      }
+
+      @media #{$breakpoint-up-xl} {
+        background-position: -140px -60px;
+      }
+    }
+  }
+
   &.section_bg_dark {
     background-color: $color-brown-dark;
+
+    &.section_bg_logo {
+      &:before {
+        background-image: url(../assets/img/logo-bg-dark.png);
+      }
+    }
   }
 
   &.section_type_slides {
@@ -47,7 +89,7 @@
   &.section_type_divider {
     @include before;
     padding: 40px 0;
-    background: url(src/assets/img/divider-bg.jpg) no-repeat center top scroll $color-brown-dark;
+    background: url(../assets/img/divider-bg.jpg) no-repeat center top scroll $color-brown-dark;
     background-size: cover;
 
     @media #{$breakpoint-up-md} {
@@ -78,19 +120,19 @@
         position: absolute;
         top: 0;
         right: 0;
-        background: url(src/assets/img/divider-pic-mobile.png) no-repeat center bottom scroll rgba(0,0,0,0);
+        background: url(../assets/img/divider-pic-mobile.png) no-repeat center bottom scroll rgba(0,0,0,0);
       }
 
       @media #{$breakpoint-up-md} {
-        background-image: url(src/assets/img/divider-pic-tablet.png);
+        background-image: url(../assets/img/divider-pic-tablet.png);
       }
 
       @media #{$breakpoint-up-lg} {
-        background-image: url(src/assets/img/divider-pic-desktop.png);
+        background-image: url(../assets/img/divider-pic-desktop.png);
       }
 
       @media #{$breakpoint-up-xl} {
-        background-image: url(src/assets/img/divider-pic.png);
+        background-image: url(../assets/img/divider-pic.png);
       }
     }
   }
@@ -122,27 +164,23 @@
     margin: 0 0 40px;
   }
 
-  &.section-title_fs_lg {
+  &.section-title_type_main {
+    margin: 0 0 24px;
+
+    @media #{$breakpoint-up-sm} {
+      text-align: center;
+    }
+
+    @media #{$breakpoint-up-md} {
+      margin: 0 0 40px;
+    }
+
     @media #{$breakpoint-up-lg} {
       @include fs-lh(48px,52px);
     }
   }
 
-  &.section-title_ta_center {
-    @media #{$breakpoint-up-sm} {
-      text-align: center;
-    }
-  }
-
   &.section-title_color_white {
     color: $color-white;
-  }
-
-  &.section-title_mb_min {
-    margin: 0 0 24px;
-
-    @media #{$breakpoint-up-md} {
-      margin: 0 0 40px;
-    }
   }
 }

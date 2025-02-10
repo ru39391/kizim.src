@@ -39,12 +39,20 @@
   background-clip: text;
   text-fill-color: rgba(0,0,0,0);
   color: rgba(0,0,0,0);
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(128px,115px);
+  }
 }
 
 .about__label {
   @include fs-lh(48px,1);
   font-weight: 600;
   color: color.adjust($color-default, $lightness: 30%);
+
+  @media #{$breakpoint-up-xl} {
+    font-size: 64px;
+  }
 }
 
 .about__desc {

@@ -3,7 +3,7 @@
 
 .project {
   @extend %d-flex-column;
-  width: 280px;
+  @include wh(280px,100%);
   min-height: 500px;
   overflow: hidden;
   border-radius: 16px;

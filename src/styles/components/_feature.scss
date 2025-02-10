@@ -21,9 +21,6 @@
   }
 }
 
-.feature {
-}
-
 .feature__title {
   @include fs-lh(24px,26px);
   font-weight: 600;
@@ -31,6 +28,11 @@
   text-transform: uppercase;
   color: $color-gray-dark;
   margin: 0 0 8px;
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(32px,35px);
+    margin: 0 0 12px;
+  }
 }
 
 .feature__desc {

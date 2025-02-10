@@ -12,7 +12,7 @@ const renderData = (tpl: Template): Node[] => {
   return Array.from(body.children);
 }
 
-const fetchTemplate = async (): Template => {
+const fetchTemplate = async (): Promise<Template | undefined> => {
   try {
     const res = await fetch('src/assets/templates/tpl.twig');
     const data = await res.text();
@@ -28,7 +28,7 @@ const init = async () => {
 
   try {
     const tpl = await fetchTemplate();
-    const arr = renderData(tpl);
+    const arr = renderData(tpl as Template);
 
     arr.forEach(item => wrapper?.append(item));
     initSlides('.js-slides');

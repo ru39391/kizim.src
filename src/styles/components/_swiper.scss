@@ -1,13 +1,16 @@
 @use '../utils/helpers' as *;
 
 .swiper {
-  .swiper-button {
-    @include wh(48px);
+  .swiper-nav {
     display: none;
 
     @media #{$breakpoint-up-md} {
       display: block;
     }
+  }
+
+  .swiper-button {
+    @include wh(48px);
 
     &:after {
       content: '';
@@ -21,7 +24,7 @@
 }
 
 .swiper-slide {
-  width: auto !important;
+  @include wh(auto !important);
   padding: 0 4px;
 }
 
