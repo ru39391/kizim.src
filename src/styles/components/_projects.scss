@@ -3,21 +3,25 @@
 
 .project {
   @extend %d-flex-column;
-  @include wh(280px,500px);
+  width: 280px;
+  min-height: 500px;
   overflow: hidden;
   border-radius: 16px;
   background-color: $color-white;
 
   @media #{$breakpoint-up-sm} {
-    @include wh(400px,480px);
+    width: 400px;
+    min-height: 480px;
   }
 
   @media #{$breakpoint-up-md} {
-    @include wh(540px,508px);
+    width: 540px;
+    min-height: 508px;
   }
 
   @media #{$breakpoint-up-xl} {
-    @include wh(550px,755px);
+    width: 550px;
+    min-height: 755px;
   }
 }
 

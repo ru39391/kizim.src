@@ -1,9 +1,7 @@
 @use '../utils/helpers' as *;
 
 .section {
-  display: none;
-
-  padding: 40px 0 60px;
+  @include py(40px,60px);
   background-color: $color-light;
 
   @media #{$breakpoint-up-md} {
@@ -27,6 +25,22 @@
 
     .section-title {
       @include px(16px);
+    }
+  }
+
+  &.section_py_offset {
+    @include py(40px,60px);
+
+    @media #{$breakpoint-up-md} {
+      @include py(80px);
+    }
+
+    @media #{$breakpoint-up-lg} {
+      @include py(120px);
+    }
+
+    @media #{$breakpoint-up-xl} {
+      @include py(160px);
     }
   }
 
