@@ -9,6 +9,10 @@
   color: $color-white;
   transition: all .3s ease;
 
+  &.is-active {
+    background-color: $color-dark;
+  }
+
   &.is-visible {
     height: 100%;
     background-color: $color-dark;
