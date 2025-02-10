@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../utils/helpers' as *;
 
 .btn {
@@ -25,6 +26,12 @@
     }
   }
 
+  &.btn-dark {
+    color: $color-white;
+    background-color: $color-brown-darker;
+    box-shadow: 0 0 0 4px color.adjust($color-gray-dark, $lightness: 55%);
+  }
+
   &.btn-inverted {
     color: $color-darker;
     background-color: $color-white;
@@ -41,6 +48,19 @@
       padding: 25px;
     }
   }
+}
+
+.btn-readmore {
+  @include fs-lh(16px,1);
+  letter-spacing: -0.01em;
+  text-align: left;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, .1);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .05);
+  padding: 8px 8px 8px 16px;
+  gap: 0 16px;
+  justify-content: space-between;
 }
 
 .btn-play {

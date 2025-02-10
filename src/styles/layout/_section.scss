@@ -48,7 +48,7 @@
       @include pos(0);
       @include wh(100%);
       z-index: 1;
-      background: linear-gradient(113.87deg, $color-dark 19.02%, $color-brown-darker 107.88%);
+      background: linear-gradient(113.87deg, $color-dark 19.02%, $color-brown-darken 107.88%);
 
       @media #{$breakpoint-up-sm} {
         width: auto;

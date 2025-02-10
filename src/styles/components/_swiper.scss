@@ -12,6 +12,11 @@
     &:after {
       content: '';
     }
+
+    &.swiper-button_bordered {
+      border-radius: 8px;
+      border: 3px solid rgba(0,0,0,.1);
+    }
   }
 }
 
@@ -22,20 +27,20 @@
 
 .swiper-button-prev {
   @media #{$breakpoint-up-md} {
-    left: 55px;
+    left: 45px;
   }
 
   @media #{$breakpoint-up-xl} {
-    left: 110px;
+    left: 90px;
   }
 }
 
 .swiper-button-next {
   @media #{$breakpoint-up-md} {
-    right: 55px;
+    right: 45px;
   }
 
   @media #{$breakpoint-up-xl} {
-    right: 110px;
+    right: 90px;
   }
 }
