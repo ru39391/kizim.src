@@ -1,0 +1,65 @@
+@use '../utils/helpers' as *;
+
+.content {
+  color: $color-content;
+
+  h1 {
+    @include fs-lh(28px,1);
+    font-weight: 700;
+  }
+
+  h2 {
+    @include fs-lh(22px,28px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+
+  p {
+    @include fs-lh(14px,18px);
+    letter-spacing: -0.01em;
+  }
+
+  li {
+    @include fs-lh(14px,18px);
+    letter-spacing: -0.01em;
+    list-style: disc;
+    list-style-position: inside;
+  }
+
+  ul {
+    @extend %d-flex-column;
+    @include offset(0 0 20px,0 0 0 8px);
+    gap: 4px 0;
+  }
+
+  blockquote {
+    @include border(1px 0 0,rgba(0,0,0,.09));
+    @include offset(4px 0 0,16px 0 0);
+    @include fs-lh(16px,22px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    p {
+      @include fs-lh(16px,22px);
+    }
+  }
+}
+
+.content__intro {
+  @extend %d-flex-column;
+  gap: 8px 0;
+  margin: 0 0 24px;
+}
+
+.content__list {
+  @extend %d-flex-column;
+  gap: 2px 0;
+  margin: 0 0 20px;
+
+  li {
+    @include fs-lh(16px,22px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}

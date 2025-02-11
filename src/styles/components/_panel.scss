@@ -1,17 +1,26 @@
 @use '../utils/helpers' as *;
 
 .panel {
-  display: flex;
+  @extend %d-flex-column;
   min-height: 120px;
   overflow: hidden;
   border-radius: 8px;
   background-color: rgba(0,0,0,.08);
+
+  @media #{$breakpoint-up-sm} {
+    flex-direction: row;
+  }
 }
 
 .panel__aside {
-  @include fw(180px);
+  @include fw(120px);
+  max-width: 100%;
   position: relative;
   background-color: $color-graphite;
+
+  @media #{$breakpoint-up-sm} {
+    @include fw(180px);
+  }
 }
 
 .panel__logo {
@@ -41,7 +50,7 @@
 .panel__header {
   @extend %d-flex-column;
   gap: 2px 0;
-  color: #383A3F;
+  color: $color-content;
 }
 
 .panel__title {
@@ -68,5 +77,5 @@
   letter-spacing: -0.01em;
   white-space: nowrap;
   gap: 0 4px;
-  color: #383A3F;
+  color: $color-content;
 }
