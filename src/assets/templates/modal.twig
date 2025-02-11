@@ -63,18 +63,18 @@
 		<div class="modal-footer">
 			<div class="modal-container">
 				<div class="panel">
-					<div class="panel__aside" style="background-color:{{ fill }};">
+					<div class="panel__aside" style="background-color:{{ sibling.fill }};">
 						<div class="panel__logo">
-							<img class="panel__img" src="http://kizim.local/assets/images/projects/makromir/picture.png" alt="Макромир" />
+							<img class="panel__img" src="{{ sibling.picture }}" alt="{{ sibling.name }}" />
 						</div>
 					</div>
 					<div class="panel__wrapper">
 						<div class="panel__header">
-							<div class="panel__title">Макромир</div>
-							<div class="panel__subtitle">Маркетплейс риэлторских услуг</div>
+							<div class="panel__title">{{ sibling.name }}</div>
+							<div class="panel__subtitle">{{ sibling.desc }}</div>
 						</div>
 						<div class="panel__footer">
-							<button class="panel__btn" type="button">Смотреть следующий проект
+							<button class="panel__btn js-modal-btn" type="button" data-res="{{ sibling.id }}">Смотреть следующий проект
 								<span>-></span>
 							</button>
 						</div>

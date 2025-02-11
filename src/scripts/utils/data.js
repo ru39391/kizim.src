@@ -55,6 +55,13 @@ const arr = [
         desc: "более 300",
       },
     ],
+    sibling: {
+      id: 13,
+      name: "Жилой квартал “R4”",
+      desc: "Специализированный Застройщик “ГРУППА”",
+      picture: "http://kizim.local/assets/images/projects/zhiloj-kvartal-r4/picture.png",
+      fill: "#44B042"
+    }
   },
   {
     id: 11,
