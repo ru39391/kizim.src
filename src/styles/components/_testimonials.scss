@@ -72,9 +72,8 @@
 }
 
 .testimonial-card__img {
-  @include wh(100%);
+  @include object-fit();
   min-height: 480px;
-  object-fit: cover;
 
   @media #{$breakpoint-up-xl} {
     min-height: 560px;

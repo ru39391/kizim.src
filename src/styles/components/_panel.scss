@@ -13,6 +13,7 @@
 }
 
 .panel__aside {
+  @include before;
   @include fw(120px);
   max-width: 100%;
   position: relative;
@@ -20,6 +21,13 @@
 
   @media #{$breakpoint-up-sm} {
     @include fw(180px);
+  }
+
+  &:before {
+    @include pos(0);
+    @include wh(100%);
+    z-index: 2;
+    background-color: rgba(0,0,0,.2);
   }
 }
 
@@ -29,14 +37,25 @@
   @include pos(50%);
   @include wh(116px,50px);
   padding: 12px;
+  z-index: 3;
   border-radius: 8px;
   background-color: $color-white;
-  transform: translate(-58px,-25px)
+  transform: translate(-58px,-25px);
+
+  &.panel__logo_bg_blur {
+    backdrop-filter: blur(14px);
+    background-color: rgba(255,255,255,.1);
+  }
 }
 
 .panel__img {
-  @include wh(100%);
-  object-fit: contain;
+  @include zi(1);
+  @include object-fit(contain);
+}
+
+.panel__bg {
+  @include pos(0);
+  @include object-fit();
 }
 
 .panel__wrapper {

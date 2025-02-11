@@ -26,8 +26,8 @@
 }
 
 .project__header {
+  @include before;
   height: 200px;
-  position: relative;
 
   @media #{$breakpoint-up-md} {
     height: 240px;
@@ -36,11 +36,16 @@
   @media #{$breakpoint-up-xl} {
     height: 346px;
   }
+
+  &:before {
+    @include pos(0);
+    @include wh(100%);
+    background-color: rgba(0,0,0,.2);
+  }
 }
 
 .project__img {
-  @include wh(100%);
-  object-fit: cover;
+  @include object-fit();
 }
 
 .project__logo {
@@ -53,11 +58,15 @@
   padding: 8px 32px;
   border-radius: 16px;
   background-color: $color-white;
+
+  &.project__logo_bg_blur {
+    backdrop-filter: blur(14px);
+    background-color: rgba(255,255,255,.2);
+  }
 }
 
 .project__logo-img {
-  @include wh(100%);
-  object-fit: contain;
+  @include object-fit(contain);
 }
 
 .project__wrapper {

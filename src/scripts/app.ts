@@ -35,7 +35,7 @@ const init = async () => {
 
     arr.forEach(item => wrapper?.append(item));
     initSlides('.js-slides');
-    new Modal({ btnSel: '.js-modal-btn', modalSel: 'modal-overlay' });
+    new Modal({ btnSel: '.js-modal-btn', overlayClass: 'modal-overlay' });
     new Panel({ sel: '.js-nav' });
     new Toggler({ itemSel: '.js-nav', btnSel: '.js-nav-toggler' });
   } catch(err) {

@@ -1,10 +1,15 @@
 import Twig, { Template } from 'twig';
-import { TPL_URL } from '../utils/constants';
-import { fetchProjectsData } from '../utils/data';
+import {
+  SITE_URL,
+  API_URL,
+  TPL_URL,
+  MODAL_BTN_SEL,
+  MODAL_OVERLAY_CLASS
+} from '../utils/constants';
 
 type TModalOptions = {
   btnSel: string;
-  modalSel: string;
+  overlayClass: string;
 };
 
 type TResData = {
@@ -26,22 +31,24 @@ type TTemplateData = {
 
 class Modal {
   tplPath: string | null = null;
-  modalSel: string | null = null;
-  modalOverlay: Element | null = null;
-  modalOverlayClass: string = 'js-modal-overlay';
+  btnSel: string = MODAL_BTN_SEL;
+  modalOverlay: HTMLElement | null = null;
+  overlayClass: string = MODAL_OVERLAY_CLASS;
   modalClass: string = 'modal';
+  modalOverlayClass: string = 'js-modal-overlay';
   classMod: string = 'is-visible';
-  modalBtns: Element[] = [];
+  modalBtns: HTMLElement[] = [];
 
   constructor(options: TModalOptions) {
     this.init(options);
   }
 
   init(options: TModalOptions) {
-    const { btnSel, modalSel } = options;
+    const { btnSel, overlayClass } = options;
 
-    this.modalSel = modalSel;
-    this.modalBtns = Array.from(document.querySelectorAll(btnSel));
+    this.btnSel = btnSel;
+    this.overlayClass = overlayClass;
+    this.modalBtns = Array.from(document.querySelectorAll(this.btnSel));
 
     if (!this.modalBtns.length) {
       return;
@@ -52,43 +59,67 @@ class Modal {
     this.handleBtnEventListener();
   }
 
-  hideModal(event: MouseEvent) {HTMLElement
+  hideModal(currentTarget: HTMLElement | null) {
+    if(!currentTarget) {
+      return;
+    }
+
+    currentTarget.classList.remove(this.classMod);
+    currentTarget.remove();
+    currentTarget = null;
+    this.modalOverlay = null;
+    document.body.style.overflow = '';
+  }
+
+  closeModal(event: MouseEvent) {
     const { target, currentTarget } = {
       target: event.target as HTMLElement,
       currentTarget: event.currentTarget as HTMLElement,
     };
 
     if(target.parentElement === currentTarget) {
-      currentTarget.classList.remove(this.classMod);
-      currentTarget.remove();
-      this.modalOverlay = null;
+      this.hideModal(currentTarget);
     }
   }
 
-  renderData(item: Element | null) {
+  changeModal(event: MouseEvent) {
+    event.preventDefault();
+
+    const { btn } = { btn: event.target as HTMLElement };
+    const { res: id } = btn.dataset;
+
+    if(!id) {
+      return;
+    }
+
+    this.fetchItems(id, btn.closest(`.${this.overlayClass}`) as HTMLElement);
+  }
+
+  renderData(item: HTMLElement | null) {
     if(!item) {
       return;
     }
 
+    const btn = item.querySelector(this.btnSel);
+
     this.modalOverlay = document.createElement('div');
 
     [
-      this.modalSel,
+      this.overlayClass,
       this.modalOverlayClass,
       this.classMod
     ].forEach(className => this.modalOverlay?.classList.add(className as string));
 
-    this.modalOverlay.addEventListener('click', (this.hideModal as EventListener).bind(this));
+    btn?.addEventListener('click', (this.changeModal as EventListener).bind(this));
+    this.modalOverlay.addEventListener('click', (this.closeModal as EventListener).bind(this));
     this.modalOverlay.append(item);
     document.body.append(this.modalOverlay);
+    document.body.style.overflow = 'hidden';
   }
 
   parseData(data: TResData, tpl: Template) {
     const parser = new DOMParser();
-    const { body } = parser.parseFromString(
-      tpl.render(data),
-      'text/html'
-    );
+    const { body } = parser.parseFromString(tpl.render(data), 'text/html');
 
     this.renderData(body.querySelector(`.${this.modalClass}`));
   }
@@ -108,12 +139,23 @@ class Modal {
     return tplData;
   }
 
-  async fetchItems(id: string) {
+  async fetchItems(id: string, modalOverlay: HTMLElement | null = null) {
+    this.hideModal(modalOverlay);
+
     try {
+      const response = await fetch(`${SITE_URL}${API_URL}/projects/${id}`);
+
+      if(!response.ok) {
+        return;
+      }
+
       const [
         { data: resData, success },
         { tpl, isSucceed }
-      ] = await Promise.all([fetchProjectsData(id), this.fetchTemplate()]);
+      ] = await Promise.all([
+        response.json(),
+        this.fetchTemplate()
+      ]);
 
       if(success && isSucceed) {
         this.parseData(resData, tpl as Template);

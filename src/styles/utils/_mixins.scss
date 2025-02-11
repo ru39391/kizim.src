@@ -61,6 +61,11 @@
   }
 }
 
+@mixin object-fit($of: cover) {
+  @include wh(100%);
+  object-fit: $of;
+}
+
 @mixin color-white($opacity) {
   color: rgba(255, 255, 255, $opacity);
 }
