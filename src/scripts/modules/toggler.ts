@@ -52,8 +52,8 @@ class Toggler {
   }
 
   bindEvents() {
-    this.btn?.addEventListener('click', this.toggleNav.bind(this));
-    document.body?.addEventListener('click', this.hideNav.bind(this));
+    this.btn?.addEventListener('click', (this.toggleNav as EventListener).bind(this));
+    document.body.addEventListener('click', this.hideNav.bind(this));
   }
 }
 

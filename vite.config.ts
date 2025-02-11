@@ -5,14 +5,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        },
-        entryFileNames: 'dist/[name].js',
-        chunkFileNames: 'dist/[name].js',
-        assetFileNames: 'dist/[name].[ext]'
+        entryFileNames: 'tpl/[name].js',
+        chunkFileNames: 'tpl/[name].js',
+        assetFileNames: 'tpl/[name].[ext]'
       }
     },
   }

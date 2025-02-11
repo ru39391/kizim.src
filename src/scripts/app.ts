@@ -1,5 +1,6 @@
 import Twig, { Template } from 'twig';
 import { initSlides } from './modules/slides';
+import Modal from './modules/modal';
 import Panel from './modules/panel';
 import Toggler from './modules/toggler';
 
@@ -34,11 +35,20 @@ const init = async () => {
 
     arr.forEach(item => wrapper?.append(item));
     initSlides('.js-slides');
+    new Modal({ btnSel: '.js-modal-btn', modalSel: 'modal-overlay' });
     new Panel({ sel: '.js-nav' });
     new Toggler({ itemSel: '.js-nav', btnSel: '.js-nav-toggler' });
   } catch(err) {
     console.error(err);
   }
 };
+
+/*
+const init = () => {
+  initSlides('.js-slides');
+  new Panel({ sel: '.js-nav' });
+  new Toggler({ itemSel: '.js-nav', btnSel: '.js-nav-toggler' });
+};
+*/
 
 export default init;

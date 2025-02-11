@@ -1,23 +1,23 @@
 <div class="modal">
 	<div class="modal-wrapper">
-		<div class="modal-header" style="background-color:#353535;">
+		<div class="modal-header" style="background-color:{{ fill }};">
 			<div class="modal-header__container modal-container">
-				<div class="logo-company" style="background-color:#353535;">
-					<img class="logo-company__img" src="http://kizim.local/assets/images/projects/makromir/logo.png" alt=""/>
+				<div class="logo-company" style="background-color:{{ fill }};">
+					<img class="logo-company__img" src="{{ logo }}" alt="{{ name }}"/>
 				</div>
 			</div>
 		</div>
 		<div class="modal-content">
 			<div class="content modal-container">
 				<div class="content__intro">
-					<h1>Жилой квартал “R4”</h1>
-					<p>Специализированный Застройщик “ГРУППА”</p>
+					<h1>{{ name }}</h1>
+					<p>{{ desc }}</p>
 				</div>
 				<ul class="content__list">
-					<li>Начало работы - февраль 2025 г.</li>
-					<li>ВЕДЕНИЕ ПРОЕКТА В РЕЖИМЕ «КОММЕРЧЕСКИЙ ДИРЕКТОР НА АУТСОРСИНГЕ»</li>
-					<li>Построение высокоэффективной системы продаж для ООО СЗ «ГРУППА»</li>
+          {% for item in list %}<li>{{ item }}</li>{% endfor %}
 				</ul>
+        {{ content }}
+        <!--
 				<h2>Анализ текущей деятельности:</h2>
 				<ul>
 					<li>Детальный и глубокий анализ рыночной ситуации: динамика продаж в регионе, кто является лидерами по объему строительства и продаж, что позволяет коллегам-конкурентам достигать этих показателей и быть лидерами рынка (анализ ТОП-10).</li>
@@ -57,14 +57,15 @@
 					<p>Продолжительность и формат проекта = 4 месяца ведения с личным присутствием в городе, далее 2 месяца дистанционного кураторства (онлайн) для контроля применения стандартов обслуживания.
 					</p>
 				</blockquote>
+        -->
 			</div>
 		</div>
 		<div class="modal-footer">
 			<div class="modal-container">
 				<div class="panel">
-					<div class="panel__aside" style="background-color:#353535;">
+					<div class="panel__aside" style="background-color:{{ fill }};">
 						<div class="panel__logo">
-							<img class="panel__img" src="http://kizim.local/assets/images/projects/makromir/picture.png" alt="Макромир"/>
+							<img class="panel__img" src="http://kizim.local/assets/images/projects/makromir/picture.png" alt="Макромир" />
 						</div>
 					</div>
 					<div class="panel__wrapper">
