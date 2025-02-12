@@ -6,7 +6,7 @@
 		<div class="modal-header" style="background-color:{{ fill }};">
 			<div class="modal-header__container modal-container">
 				<div class="logo-company" style="background-color:{{ logoCompanyFill }};">
-					<img class="logo-company__img" src="http://kizim.local/{{ logo }}" alt="{{ name }}"/>
+					<img class="logo-company__img" src="{{ logo }}" alt="{{ name }}"/>
 				</div>
 			</div>
 		</div>
@@ -24,9 +24,9 @@
 			<div class="modal-container">
 				<div class="panel">
 					<div class="panel__aside" style="background-color:{{ sibling.fill }};">
-						{% if sibling.bg %}<img class="panel__bg" src="http://kizim.local/{{ sibling.bg }}" alt="{{ sibling.name }}" />{% endif %}
+						{% if sibling.bg %}<img class="panel__bg" src="{{ sibling.bg }}" alt="{{ sibling.name }}" />{% endif %}
 						<div class="{{ panelLogoSel }}">
-							<img class="panel__img" src="http://kizim.local/{{ sibling.picture }}" alt="{{ sibling.name }}" />
+							<img class="panel__img" src="{{ sibling.picture }}" alt="{{ sibling.name }}" />
 						</div>
 					</div>
 					<div class="panel__wrapper">
