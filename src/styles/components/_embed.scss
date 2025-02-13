@@ -1,0 +1,17 @@
+@use '../utils/helpers' as *;
+
+.embed {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding: 55% 0 0;
+  }
+}
+
+.embed__item {
+  @include pos(0);
+  @include wh(100%);
+}

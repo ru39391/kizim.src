@@ -1,5 +1,13 @@
 @use '../utils/helpers' as *;
 
+.nav-overlay {
+  overflow: hidden;
+
+  @media #{$breakpoint-up-lg} {
+    overflow: auto;
+  }
+}
+
 .nav {
   @include wh(100%, auto);
   @include pos(0,0,fixed);

@@ -6,31 +6,14 @@ import {
   MODAL_BTN_SEL,
   MODAL_OVERLAY_CLASS
 } from '../utils/constants';
-
-type TModalOptions = {
-  btnSel: string;
-  overlayClass: string;
-};
-
-type TResData = {
-  id: number;
-  name: string;
-  introtext: string;
-  content: string;
-  bg: string;
-  logo: string;
-  picture: string;
-  fill: string;
-  list: string[];
-}
-
-type TTemplateData = {
-  tpl: Template | undefined;
-  isSucceed: boolean;
-}
+import {
+  TModalOptions,
+  TProjectData,
+  TEmbedData,
+  TTemplateData
+} from '../utils/types';
 
 class Modal {
-  tplPath: string | null = null;
   btnSel: string = MODAL_BTN_SEL;
   modalOverlay: HTMLElement | null = null;
   overlayClass: string = MODAL_OVERLAY_CLASS;
@@ -54,9 +37,11 @@ class Modal {
       return;
     }
 
-    this.tplPath = `${TPL_URL}/${this.modalClass}.twig`
-
     this.handleBtnEventListener();
+  }
+
+  setTplPath(value: string = this.modalClass) {
+    return `${TPL_URL}/${value}.twig`;
   }
 
   hideModal(currentTarget: HTMLElement | null) {
@@ -117,18 +102,18 @@ class Modal {
     document.body.style.overflow = 'hidden';
   }
 
-  parseData(data: TResData, tpl: Template) {
+  parseData(data: TProjectData | TEmbedData, tpl: Template, itemClass = this.modalClass): HTMLElement | null {
     const parser = new DOMParser();
     const { body } = parser.parseFromString(tpl.render(data), 'text/html');
 
-    this.renderData(body.querySelector(`.${this.modalClass}`));
+    return body.querySelector(`.${itemClass}`);
   }
 
-  async fetchTemplate(): Promise<TTemplateData> {
+  async fetchTemplate(tplPath: string): Promise<TTemplateData> {
     let tplData: TTemplateData = { tpl: undefined, isSucceed: false };
 
     try {
-      const res = await fetch(this.tplPath as string);
+      const res = await fetch(tplPath);
       const data = await res.text();
 
       tplData = { tpl: Twig.twig({ data }), isSucceed: true };
@@ -141,6 +126,7 @@ class Modal {
 
   async fetchItems(id: string, modalOverlay: HTMLElement | null = null) {
     this.hideModal(modalOverlay);
+    const tplPath = this.setTplPath();
 
     try {
       const response = await fetch(`${SITE_URL}${API_URL}/projects/${id}`);
@@ -154,11 +140,45 @@ class Modal {
         { tpl, isSucceed }
       ] = await Promise.all([
         response.json(),
-        this.fetchTemplate()
+        this.fetchTemplate(tplPath)
       ]);
 
       if(success && isSucceed) {
-        this.parseData(resData, tpl as Template);
+        const item = this.parseData(resData as TProjectData, tpl as Template);
+
+        this.renderData(item);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async fetchVideo({ type, video }: Record<string, string>) {
+    const modalTplPath = this.setTplPath();
+    const videoTplPath = this.setTplPath(type);
+
+    try {
+      const [
+        { tpl: modalTpl, isSucceed: isModalSucceed },
+        { tpl: videoTpl, isSucceed: isVideoSucceed }
+      ] = await Promise.all([
+        this.fetchTemplate(modalTplPath),
+        this.fetchTemplate(videoTplPath)
+      ]);
+
+      if(isModalSucceed && isVideoSucceed) {
+        const embed = this.parseData({ video }, videoTpl as Template, 'embed') as HTMLElement;
+        const modal = this.parseData(
+          {
+            content: embed.outerHTML,
+            isHeaderHidden: 1,
+            isFooterHidden: 1,
+            modalClass: 'video'
+          },
+          modalTpl as Template
+        );
+
+        this.renderData(modal);
       }
     } catch (error) {
       console.log(error);
@@ -169,13 +189,13 @@ class Modal {
     event.preventDefault();
 
     const { dataset } = event.target as HTMLElement;
-    const { target, res } = dataset;
+    const { target, res, type, video } = dataset;
 
-    if(!target && !res) {
-      return;
+    if(!res && video) {
+      this.fetchVideo({ type, video });
     }
 
-    if(res) {
+    if(res && !video) {
       this.fetchItems(res);
     }
   }

@@ -28,7 +28,11 @@ class Toggler {
   }
 
   handleDocBody(item: Element | null) {
-    document.body.style.overflow = item?.classList.contains(this.classMod) ? 'hidden' : '';
+    const { body } = document;
+    const { classList } = body;
+
+    body.removeEventListener('click', this.hideNav.bind(this));
+     item?.classList.contains(this.classMod) ? classList.add('nav-overlay') : classList.remove('nav-overlay');
   }
 
   hideNav(event: MouseEvent) {
@@ -44,6 +48,7 @@ class Toggler {
 
   toggleNav(event: MouseEvent) {
     event.preventDefault();
+    document.body.addEventListener('click', this.hideNav.bind(this));
 
     if(this.item) {
       this.item.classList.toggle(this.classMod);
@@ -53,7 +58,6 @@ class Toggler {
 
   bindEvents() {
     this.btn?.addEventListener('click', (this.toggleNav as EventListener).bind(this));
-    document.body.addEventListener('click', this.hideNav.bind(this));
   }
 }
 

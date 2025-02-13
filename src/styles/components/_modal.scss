@@ -39,6 +39,29 @@
   @media #{$breakpoint-up-lg} {
     @include py(80px);
   }
+
+  &.modal_type_video {
+    .modal-wrapper {
+      padding: 0
+    }
+
+    .modal-container {
+      max-width: 100%;
+    }
+
+    .modal-content {
+      @include offset(0,0);
+      background-color: rgba(0,0,0,0);
+    }
+
+    .content__intro {
+      display: none;
+    }
+
+    .content__list {
+      display: none;
+    }
+  }
 }
 
 .modal-wrapper {

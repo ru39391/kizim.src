@@ -9,6 +9,7 @@
 .header__wrapper {
   @extend %d-flex-column;
   position: relative;
+  min-height: 100vh;
   padding: 356px 0 40px;
   background: url(../assets/img/header-pic-mobile.png) no-repeat scroll -60px bottom rgba(0,0,0,0);
 

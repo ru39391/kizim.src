@@ -1,8 +1,10 @@
 {% set panelLogoSel = sibling.isBlurred ? 'panel__logo panel__logo_bg_blur' : 'panel__logo' %}
 {% set logoCompanyFill = logoFill ? logoFill : fill %}
+{% set currModalClass = modalClass ? 'modal modal_type_' ~ modalClass : 'modal' %}
 
-<div class="modal">
+<div class="{{ currModalClass }}">
 	<div class="modal-wrapper">
+    {% if isHeaderHidden != 1 %}
 		<div class="modal-header" style="background-color:{{ fill }};">
 			<div class="modal-header__container modal-container">
 				<div class="logo-company" style="background-color:{{ logoCompanyFill }};">
@@ -10,6 +12,7 @@
 				</div>
 			</div>
 		</div>
+    {% endif %}
 		<div class="modal-content">
 			<div class="content modal-container">
 				<div class="content__intro">
@@ -20,6 +23,7 @@
         {{ content }}
 			</div>
 		</div>
+    {% if isFooterHidden != 1 %}
 		<div class="modal-footer">
 			<div class="modal-container">
 				<div class="panel">
@@ -43,5 +47,6 @@
 				</div>
 			</div>
 		</div>
+    {% endif %}
 	</div>
 </div>
