@@ -2,9 +2,7 @@ import Twig, { Template } from 'twig';
 import {
   SITE_URL,
   API_URL,
-  TPL_URL,
-  MODAL_BTN_SEL,
-  MODAL_OVERLAY_CLASS
+  TPL_URL
 } from '../utils/constants';
 import {
   TModalOptions,
@@ -14,12 +12,12 @@ import {
 } from '../utils/types';
 
 class Modal {
-  btnSel: string = MODAL_BTN_SEL;
-  modalOverlay: HTMLElement | null = null;
-  overlayClass: string = MODAL_OVERLAY_CLASS;
-  modalClass: string = 'modal';
-  modalOverlayClass: string = 'js-modal-overlay';
+  btnSel: string = '.js-modal-btn';
   classMod: string = 'is-visible';
+  modalClass: string = 'modal';
+  overlayClass: string = 'modal-overlay';
+  modalOverlayClass: string = 'js-modal-overlay';
+  modalOverlay: HTMLElement | null = null;
   modalBtns: HTMLElement[] = [];
   isModalPlain: boolean = false;
 

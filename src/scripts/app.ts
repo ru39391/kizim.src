@@ -1,5 +1,6 @@
 import Twig, { Template } from 'twig';
 import { initSlides } from './modules/slides';
+import { initNavHandler } from './modules/nav';
 import Modal from './modules/modal';
 import Panel from './modules/panel';
 import Toggler from './modules/toggler';
@@ -34,6 +35,7 @@ const init = async () => {
     const arr = renderData(tpl as Template);
 
     arr.forEach(item => wrapper?.append(item));
+    initNavHandler();
     initSlides('.js-slides');
     new Modal({ btnSel: '.js-modal-btn', overlayClass: 'modal-overlay' });
     new Panel({ sel: '.js-nav' });
