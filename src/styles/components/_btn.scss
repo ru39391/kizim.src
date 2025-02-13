@@ -48,6 +48,11 @@
       padding: 25px;
     }
   }
+
+  &:disabled {
+    opacity: .75;
+    cursor: pointer;
+  }
 }
 
 .btn-readmore {

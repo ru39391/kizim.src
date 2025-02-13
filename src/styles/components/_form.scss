@@ -76,6 +76,10 @@
       max-width: 720px;
     }
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .form-desc {
@@ -83,6 +87,15 @@
   @include color-white(0.3);
   font-weight: 500;
   letter-spacing: -0.01em;
+
+  &.form-desc_type_error {
+    color: $color-error;
+    margin-bottom: 16px;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .form__fieldset {
@@ -111,6 +124,20 @@
       }
     }
   }
+
+  &.is-error {
+    .form-error {
+      display: block;
+    }
+  }
+}
+
+.form-error {
+  @include fs-lh(12px,16px);
+  @include pos(0,16px);
+  display: none;
+  pointer-events: none;
+  color: $color-error;
 }
 
 .form__field {
