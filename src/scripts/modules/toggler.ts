@@ -1,12 +1,9 @@
-type TTogglerOptions = {
-  itemSel: string;
-  btnSel: string;
-};
+import type { TTogglerOptions } from '../utils/types';
 
 class Toggler {
   btnSel: string | null = null;
-  btn: Element | null = null;
-  item: Element | null = null;
+  btn: HTMLButtonElement | null = null;
+  item: HTMLElement | null = null;
   classMod: string = 'is-visible';
 
   constructor(options: TTogglerOptions) {
@@ -27,16 +24,16 @@ class Toggler {
     this.bindEvents();
   }
 
-  handleDocBody(item: Element | null) {
+  handleDocBody(item: HTMLElement | null) {
     const { body } = document;
     const { classList } = body;
 
     body.removeEventListener('click', this.hideNav.bind(this));
-     item?.classList.contains(this.classMod) ? classList.add('nav-overlay') : classList.remove('nav-overlay');
+    item?.classList.contains(this.classMod) ? classList.add('nav-overlay') : classList.remove('nav-overlay');
   }
 
   hideNav(event: MouseEvent) {
-    const item = event.target as Element;
+    const item = event.target as HTMLElement;
 
     if(this.btnSel && item.closest(this.btnSel)) {
       return;

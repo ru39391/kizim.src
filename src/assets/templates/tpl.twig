@@ -69,16 +69,22 @@
 				<div class="header__reviews-subtitle">24 положительных отзыва</div>
 			</div>
 			<div class="header__title">Ирина Кизим</div>
-			<div class="header__form">
-				<form class="form form_width_min" action="#" method="post">
+			<div class="header__form js-form">
+        <div class="content form-content js-form-content-success is-hidden">Изменения сохранены!</div>
+				<form class="form form_width_min js-form-content" action="#" method="post">
+          <div class="form-content form-content_type_plain form-content_type_failure js-form-content-failure is-hidden"></div>
 					<fieldset class="form__fieldset">
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__name"/>
+						<div class="form__item js-input-holder">
+              <div class="js-form-row-holder"></div>
+							<input class="form__field js-input-field js-input-type-default" type="text" value="" name="consult__name" placeholder="Ваше имя"/>
 							<label class="form__label">Ваше имя</label>
+              <span class="form-error js-error-message"></span>
 						</div>
-						<div class="form__item">
-							<input class="form__field" type="text" value="" name="consult__phone"/>
+						<div class="form__item js-input-holder">
+              <div class="js-form-row-holder"></div>
+							<input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="consult__phone" placeholder="+7 (999) 999-99-99"/>
 							<label class="form__label">+7 (999) 999-99-99</label>
+              <span class="form-error js-error-message"></span>
 						</div>
 					</fieldset>
 					<div class="form-toggler-row">
@@ -88,7 +94,7 @@
 							Даю согласие на обработку персональных данных
 						</label>
 					</div>
-					<button class="btn btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+					<button class="btn btn-plain btn-inverted js-form-submit" type="button">Заказать программу обучения</button>
 				</form>
 			</div>
 		</div>
@@ -174,7 +180,7 @@
 							</div>
 							<div class="card__date">19.10.2023</div>
 						</div>
-						<button class="card__btn-play btn-play js-modal-btn type="button" data-type="video" data-video="cac7f250de2f518630f986993aebba2b"></button>
+						<button class="card__btn-play btn-play js-modal-btn type="button" data-type="video" data-video="97de0bdec143450d09e257df4721ca66"></button>
 					</div>
 				</div>
 			</div>
@@ -362,7 +368,7 @@
 						<label class="form__label">Ваше имя</label>
 					</div>
 					<div class="form__item form__item_size_xl">
-						<input class="form__field" type="text" value="" name="order__phone"/>
+						<input class="form__field" type="tel" value="" name="order__phone"/>
 						<label class="form__label">+7 (999) 999-99-99</label>
 					</div>
 				</fieldset>
@@ -616,7 +622,7 @@
 						<label class="form__label">Ваше имя</label>
 					</div>
 					<div class="form__item form__item_size_xl">
-						<input class="form__field" type="text" value="" name="order__phone"/>
+						<input class="form__field" type="tel" value="" name="order__phone"/>
 						<label class="form__label">+7 (999) 999-99-99</label>
 					</div>
 				</fieldset>
@@ -676,17 +682,17 @@
           <form class="form form_width_max" action="#" method="post">
             <fieldset class="form__fieldset">
               <div class="form__item form__item_size_xl">
-                <input class="form__field" type="text" value="" name="order__name"/>
+                <input class="form__field" type="text" value="" name="modal__name" placeholder="Ваше имя" />
                 <label class="form__label">Ваше имя</label>
               </div>
               <div class="form__item form__item_size_xl">
-                <input class="form__field" type="text" value="" name="order__phone"/>
+                <input class="form__field" type="tel" value="" name="modal__phone" placeholder="+7 (999) 999-99-99" />
                 <label class="form__label">+7 (999) 999-99-99</label>
               </div>
             </fieldset>
             <div class="form-toggler-row">
-              <input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
-              <label class="form__label form__label_fs_md" for="order__policy">
+              <input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="modal__policy" checked />
+              <label class="form__label form__label_fs_md" for="modal__policy">
                 <span class="form-toggler-icon"></span>
                 Даю согласие на обработку персональных данных
               </label>

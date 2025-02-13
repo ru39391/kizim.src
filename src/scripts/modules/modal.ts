@@ -1,10 +1,9 @@
 import Twig, { Template } from 'twig';
 import {
-  SITE_URL,
-  API_URL,
-  TPL_URL
+  TPL_URL,
+  SITE_API_URL
 } from '../utils/constants';
-import {
+import type {
   TModalOptions,
   TProjectData,
   TEmbedData,
@@ -136,7 +135,7 @@ class Modal {
     const tplPath = this.setTplPath();
 
     try {
-      const response = await fetch(`${SITE_URL}${API_URL}/projects/${id}`);
+      const response = await fetch(`${SITE_API_URL}/projects/${id}`);
 
       if(!response.ok) {
         return;

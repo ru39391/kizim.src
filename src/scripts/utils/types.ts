@@ -15,7 +15,7 @@ export type TProjectData = {
   picture: string;
   fill: string;
   list: string[];
-}
+};
 
 export type TEmbedData = {
   video?: string;
@@ -23,9 +23,14 @@ export type TEmbedData = {
   modalClass?: string;
   isHeaderHidden?: number;
   isFooterHidden?: number;
-}
+};
 
 export type TTemplateData = {
   tpl: Template | undefined;
   isSucceed: boolean;
-}
+};
+
+export type TTogglerOptions = {
+  itemSel: string;
+  btnSel: string;
+};

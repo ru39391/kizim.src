@@ -4,7 +4,7 @@ type TPanelOptions = {
 
 class Panel {
   isScrolled: boolean = false;
-  item: Element | null = null;
+  item: HTMLElement | null = null;
   scrollHeight: number = 0;
   classMod: string = 'is-active';
 
