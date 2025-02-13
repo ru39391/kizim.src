@@ -355,13 +355,13 @@ const submitForm = () => {
             return;
           }
 
-          const { data, success } = await response.json();
+          const { data: { uri }, success } = await response.json();
 
           if (success) {
             formNode.reset();
             formContent?.classList.add(FORM_STATE.hidden);
             formSuccess?.classList.remove(FORM_STATE.hidden);
-            console.log(data.succeed);
+            window.location = uri;
           } else {
             submitBtn.disabled = true;
           }
