@@ -53,13 +53,23 @@
       @include offset(0,0);
       background-color: rgba(0,0,0,0);
     }
+  }
 
-    .content__intro {
-      display: none;
+  &.modal_type_plain {
+    .modal-wrapper {
+      max-width: 480px;
+      padding: 0
     }
 
-    .content__list {
-      display: none;
+    .modal-content {
+      @include offset(0,32px 24px 40px);
+      border-radius: 16px;
+      background: url(../assets/img/divider-bg.jpg) no-repeat top center scroll $color-brown-dark;
+      background-size: cover;
+
+      @media #{$breakpoint-up-md} {
+        @include px(32px);
+      }
     }
   }
 }

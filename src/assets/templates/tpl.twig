@@ -47,7 +47,7 @@
 								</a>
 							{% endfor %}
 						</div>
-						<button class="nav__btn btn btn_type_row" type="button">
+						<button class="nav__btn btn btn_type_row js-modal-btn" data-target="form" type="button">
 							Заказать проект
 							<img src="src/assets/icons/arrow-icon.svg" alt=""/>
 						</button>
@@ -664,10 +664,44 @@
 	</div>
 </footer>
 
+<div id="form" class="modal-overlay">
+  <div class="modal modal_type_plain">
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <div class="modal-container form-container">
+          <div class="form-header">
+            <div class="form-title">Создание индивидуальной программы</div>
+            <div class="form-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
+          </div>
+          <form class="form form_width_max" action="#" method="post">
+            <fieldset class="form__fieldset">
+              <div class="form__item form__item_size_xl">
+                <input class="form__field" type="text" value="" name="order__name"/>
+                <label class="form__label">Ваше имя</label>
+              </div>
+              <div class="form__item form__item_size_xl">
+                <input class="form__field" type="text" value="" name="order__phone"/>
+                <label class="form__label">+7 (999) 999-99-99</label>
+              </div>
+            </fieldset>
+            <div class="form-toggler-row">
+              <input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
+              <label class="form__label form__label_fs_md" for="order__policy">
+                <span class="form-toggler-icon"></span>
+                Даю согласие на обработку персональных данных
+              </label>
+            </div>
+            <button class="btn btn-xl btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--
   // TODO:
-  1) модальные окна - для текстов, формы, видео;
-  2) прокрутка к блоку;
-  3) отправка и сохранение сообщений;
-  4) приложение для видео - уведомления в модальном окне, валидация для id
+  1) прокрутка к блоку;
+  2) отправка и сохранение сообщений;
+  3) приложение для видео - уведомления в модальном окне, валидация для id
 -->

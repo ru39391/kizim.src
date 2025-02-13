@@ -14,6 +14,9 @@
 		</div>
     {% endif %}
 		<div class="modal-content">
+      {% if isHeaderHidden == 1 %}
+        {{ content }}
+      {% else %}
 			<div class="content modal-container">
 				<div class="content__intro">
 					<h1>{{ name }}</h1>
@@ -22,6 +25,7 @@
 				<ul class="content__list">{% for item in list %}<li>{{ item.name }} - {{ item.desc }}</li>{% endfor %}</ul>
         {{ content }}
 			</div>
+      {% endif %}
 		</div>
     {% if isFooterHidden != 1 %}
 		<div class="modal-footer">

@@ -21,6 +21,7 @@ class Modal {
   modalOverlayClass: string = 'js-modal-overlay';
   classMod: string = 'is-visible';
   modalBtns: HTMLElement[] = [];
+  isModalPlain: boolean = false;
 
   constructor(options: TModalOptions) {
     this.init(options);
@@ -49,10 +50,18 @@ class Modal {
       return;
     }
 
-    currentTarget.classList.remove(this.classMod);
-    currentTarget.remove();
-    currentTarget = null;
-    this.modalOverlay = null;
+    [currentTarget, this.modalOverlay].forEach(
+      (item) => {
+        item?.classList.remove(this.classMod);
+        item?.removeEventListener('click', (this.closeModal as EventListener).bind(this));
+
+        if(!this.isModalPlain) {
+          item?.remove();
+          item = null;
+        }
+      }
+    );
+
     document.body.style.overflow = '';
   }
 
@@ -185,18 +194,36 @@ class Modal {
     }
   }
 
+  openModal(id: string) {
+    if(!id) {
+      return;
+    }
+
+    this.isModalPlain = true;
+    this.modalOverlay = document.querySelector(`#${id}`);
+    this.modalOverlay?.classList.add(this.classMod);
+    this.modalOverlay?.addEventListener('click', (this.closeModal as EventListener).bind(this));
+    document.body.style.overflow = 'hidden';
+  }
+
   showModal(event: MouseEvent) {
     event.preventDefault();
 
     const { dataset } = event.target as HTMLElement;
     const { target, res, type, video } = dataset;
 
+    this.isModalPlain = false;
+
     if(!res && video) {
-      this.fetchVideo({ type, video });
+      this.fetchVideo({ type: type as string, video });
     }
 
     if(res && !video) {
       this.fetchItems(res);
+    }
+
+    if(target) {
+      this.openModal(target);
     }
   }
 
