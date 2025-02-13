@@ -56,6 +56,10 @@
   @media #{$breakpoint-up-xl} {
     max-width: 720px;
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .form-title {

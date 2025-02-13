@@ -311,6 +311,7 @@ const submitForm = () => {
     formContent: formContentSel,
     formSuccess: formSuccessSel,
     formFailure: formFailureSel,
+    formHeader: formHeaderSel,
     submitBtn: submitBtnSel
   } = FORM_SELECTORS;
   const forms: HTMLFormElement[] = Array.from(document.querySelectorAll(form));
@@ -325,6 +326,7 @@ const submitForm = () => {
     const formContent = form.querySelector(formContentSel) as HTMLElement;
     const formSuccess = form.querySelector(formSuccessSel) as HTMLElement;
     const formFailure = form.querySelector(formFailureSel) as HTMLElement;
+    const formHeader = form.querySelector(formHeaderSel) as HTMLElement;
     const formNode = formEl ? formEl : form;
 
     formNode.addEventListener('submit', async (e) => {
@@ -360,6 +362,7 @@ const submitForm = () => {
 
           if (success) {
             formNode.reset();
+            formHeader?.classList.add(FORM_STATE.hidden);
             formContent?.classList.add(FORM_STATE.hidden);
             formSuccess?.classList.remove(FORM_STATE.hidden);
             window.location = uri;
@@ -367,10 +370,10 @@ const submitForm = () => {
             submitBtn.disabled = true;
           }
         } catch (error) {
-          if(formFailure) {
-            formFailure.textContent = error as string;
-            formFailure.classList.remove(FORM_STATE.hidden);
-          }
+          console.error(error);
+          submitBtn.disabled = false;
+          formFailure?.classList.remove(FORM_STATE.hidden);
+          //formFailure.textContent = error as string;
         }
       }
     });

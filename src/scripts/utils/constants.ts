@@ -3,6 +3,7 @@ const FORM_SELECTORS = {
   formContent: '.js-form-content',
   formSuccess: '.js-form-content-success',
   formFailure: '.js-form-content-failure',
+  formHeader: '.js-form-header',
   submitBtn: '.js-form-submit',
   inputHolder: '.js-input-holder',
   input: '.js-input-field',
