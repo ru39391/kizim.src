@@ -20,6 +20,10 @@
       max-width: 720px;
     }
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .form-container {
@@ -123,6 +127,10 @@
         }
       }
     }
+  }
+
+  &.is-hidden {
+    display: none;
   }
 
   &.is-error {

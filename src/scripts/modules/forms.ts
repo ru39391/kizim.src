@@ -170,12 +170,9 @@ const validateSelect = (select: HTMLSelectElement): boolean => {
  * Валидация чекбоксов
  */
 const validateCheckbox = (input: HTMLInputElement): boolean => {
-  let error = true;
   handleInputHolder(input, input.checked);
 
-  if(input.checked) error = false;
-
-  return error;
+  return input.checked;
 }
 
 /**
@@ -281,7 +278,6 @@ const validateForm = (form: HTMLFormElement): boolean => {
   });
 
   checkboxArr.forEach((input) => {
-    validateCheckbox(input);
     validFieldsStatus.push(validateCheckbox(input));
   });
 
@@ -327,9 +323,6 @@ const submitForm = () => {
     const formFailure = form.querySelector(formFailureSel);
     const formNode = formEl ? formEl : form;
 
-    console.log(formEl);
-    console.log(formNode);
-
     formNode.addEventListener('submit', async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
@@ -362,13 +355,13 @@ const submitForm = () => {
             return;
           }
 
-          const { data, success } = response.json();
+          const { data, success } = await response.json();
 
           if (success) {
             formNode.reset();
             formContent?.classList.add(FORM_STATE.hidden);
             formSuccess?.classList.remove(FORM_STATE.hidden);
-            console.log(data);
+            console.log(data.succeed);
           } else {
             submitBtn.disabled = true;
           }

@@ -74,7 +74,9 @@
           <div class="form-title js-form-content-success is-hidden">Изменения сохранены!</div>
           <form class="form form_width_min js-form-content" action="#" method="post">
             <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Изменения сохранены!</div>
-            <input type="hidden" value="Форма во входном экране" name="header__form" data-name="form" />
+            <div class="form__item is-hidden js-input-holder">
+              <input class="js-input-field js-input-type-default" type="hidden" value="Форма во входном экране" name="header__form" data-name="form" />
+            </div>
             <fieldset class="form__fieldset">
               <div class="form__item js-input-holder">
                 <input class="form__field js-input-field js-input-type-default" type="text" value="" name="header__name" data-name="name" placeholder="Ваше имя"/>
@@ -87,7 +89,7 @@
                 <span class="form-error js-error-message"></span>
               </div>
             </fieldset>
-            <div class="form-toggler-row">
+            <div class="form-toggler-row js-input-holder">
               <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="header__policy" checked />
               <label class="form__label" for="header__policy">
                 <span class="form-toggler-icon"></span>
