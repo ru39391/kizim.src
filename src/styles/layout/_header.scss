@@ -241,6 +241,7 @@
 }
 
 .header__reviews-img {
+  @include object-fit();
   border-radius: 50%;
   border: 2px solid $color-white;
 }

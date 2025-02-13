@@ -2,8 +2,8 @@
 @use '../utils/helpers' as *;
 
 .testimonial-card {
-  width: 280px;
-  min-height: 480px;
+  @include wh(280px,100%);
+  max-height: 480px;
   overflow: hidden;
   border-radius: 8px;
   background-color: $color-white;
@@ -14,7 +14,7 @@
 
   @media #{$breakpoint-up-xl} {
     width: 550px;
-    min-height: 560px;
+    max-height: 560px;
   }
 
   &.testimonial-card_type_plain {
@@ -73,11 +73,6 @@
 
 .testimonial-card__img {
   @include object-fit();
-  min-height: 480px;
-
-  @media #{$breakpoint-up-xl} {
-    min-height: 560px;
-  }
 }
 
 .testimonial-card__wrapper {
