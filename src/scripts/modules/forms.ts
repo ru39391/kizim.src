@@ -21,7 +21,10 @@ const showErrorMessage = (
   field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
   message: string
 ) => {
-  field.closest(FORM_SELECTORS.inputHolder).querySelector(FORM_SELECTORS.errorContent).textContent = message;
+  const holder = field.closest(FORM_SELECTORS.inputHolder);
+  const errorItem = holder?.querySelector(FORM_SELECTORS.errorContent) as HTMLElement;
+
+  errorItem.textContent = message;
 };
 
 /**
@@ -53,6 +56,7 @@ const checkPlainField = (field: HTMLInputElement | HTMLTextAreaElement, isValueV
   if (value.length === 0 && !isInputOptional(field)) {
     showErrorMessage(field, ERROR_MESSAGES.inputRequired);
   } else {
+    // TODO: установить корректные типы для key
     if(!isValueValid) showErrorMessage(field, ERROR_MESSAGES[key]);
   }
 
@@ -318,9 +322,9 @@ const submitForm = () => {
   forms.forEach((form) => {
     const formEl = form.querySelector('form');
     const submitBtn = form.querySelector(submitBtnSel) as HTMLButtonElement;
-    const formContent = form.querySelector(formContentSel);
-    const formSuccess = form.querySelector(formSuccessSel);
-    const formFailure = form.querySelector(formFailureSel);
+    const formContent = form.querySelector(formContentSel) as HTMLElement;
+    const formSuccess = form.querySelector(formSuccessSel) as HTMLElement;
+    const formFailure = form.querySelector(formFailureSel) as HTMLElement;
     const formNode = formEl ? formEl : form;
 
     formNode.addEventListener('submit', async (e) => {
@@ -333,10 +337,7 @@ const submitForm = () => {
         const [key, value] = item;
         const { dataset } = formNode.querySelector(`[name="${key}"]`) as HTMLInputElement;
 
-        return {
-          ...acc,
-          [dataset.name as string]: value
-        }
+        return { ...acc, [dataset.name as string]: value };
       }, {});
 
       if (!validate) {
@@ -367,7 +368,7 @@ const submitForm = () => {
           }
         } catch (error) {
           if(formFailure) {
-            formFailure.textContent = error;
+            formFailure.textContent = error as string;
             formFailure.classList.remove(FORM_STATE.hidden);
           }
         }

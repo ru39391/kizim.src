@@ -32,7 +32,7 @@ class Utils {
             newValue = newValue.slice(0, i);
           }
 
-          let reg: string | RexExp = matrix
+          let reg: string | RegExp = matrix
             .substr(0, this.value.length)
             .replace(/_+/g, (a) => `\\d{1,${a.length}}`)
             .replace(/[+()]/g, "\\$&");

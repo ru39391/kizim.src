@@ -14,7 +14,7 @@ const handleBtn = (target: HTMLElement) => {
 }
 
 const initNavHandler = () => {
-  const navBtns = Array.from(document.querySelectorAll('.js-nav-link'));
+  const navBtns = Array.from(document.querySelectorAll('.js-nav-link')) as HTMLElement[];
 
   if(!navBtns.length) {
     return;
