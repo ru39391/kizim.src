@@ -315,7 +315,9 @@ const submitForm = () => {
   } = FORM_SELECTORS;
   const forms: HTMLFormElement[] = Array.from(document.querySelectorAll(form));
 
-  if (!forms.length) { return false; }
+  if (!forms.length) {
+    return;
+  }
 
   forms.forEach((form) => {
     const formEl = form.querySelector('form');
@@ -323,20 +325,38 @@ const submitForm = () => {
     const formContent = form.querySelector(formContentSel);
     const formSuccess = form.querySelector(formSuccessSel);
     const formFailure = form.querySelector(formFailureSel);
-
     const formNode = formEl ? formEl : form;
+
+    console.log(formEl);
+    console.log(formNode);
+
     formNode.addEventListener('submit', async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
 
       const formData = serializeForm(formNode);
       const validate = validateForm(formNode);
+      const values = Array.from(formData.entries()).reduce((acc, item) => {
+        const [key, value] = item;
+        const { dataset } = formNode.querySelector(`[name="${key}"]`) as HTMLInputElement;
+
+        return {
+          ...acc,
+          [dataset.name as string]: value
+        }
+      }, {});
 
       if (!validate) {
         console.error(ERROR_MESSAGES.formInvalid);
       } else {
         try {
-          const response = await fetch(`${SITE_API_URL}/feedback`);
+          const response = await fetch(
+            `${SITE_API_URL}/feedback`,
+            {
+              method: 'POST',
+              body: JSON.stringify([values])
+            }
+          );
 
           if(!response.ok) {
             return;

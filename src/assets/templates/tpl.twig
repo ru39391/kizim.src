@@ -74,26 +74,27 @@
           <div class="form-title js-form-content-success is-hidden">Изменения сохранены!</div>
           <form class="form form_width_min js-form-content" action="#" method="post">
             <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Изменения сохранены!</div>
+            <input type="hidden" value="Форма во входном экране" name="header__form" data-name="form" />
             <fieldset class="form__fieldset">
               <div class="form__item js-input-holder">
-                <input class="form__field js-input-field js-input-type-default" type="text" value="" name="consult__name" placeholder="Ваше имя"/>
+                <input class="form__field js-input-field js-input-type-default" type="text" value="" name="header__name" data-name="name" placeholder="Ваше имя"/>
                 <label class="form__label">Ваше имя</label>
                 <span class="form-error js-error-message"></span>
               </div>
               <div class="form__item js-input-holder">
-                <input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="consult__phone" placeholder="+7 (999) 999-99-99"/>
+                <input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="header__phone" data-name="phone" placeholder="+7 (999) 999-99-99"/>
                 <label class="form__label">+7 (999) 999-99-99</label>
                 <span class="form-error js-error-message"></span>
               </div>
             </fieldset>
             <div class="form-toggler-row">
-              <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="consult__policy" checked />
-              <label class="form__label" for="consult__policy">
+              <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="header__policy" checked />
+              <label class="form__label" for="header__policy">
                 <span class="form-toggler-icon"></span>
                 Даю согласие на обработку персональных данных
               </label>
             </div>
-            <button class="btn btn-plain btn-inverted js-form-submit" type="button">Заказать программу обучения</button>
+            <button class="btn btn-plain btn-inverted js-form-submit" type="submit">Заказать программу обучения</button>
           </form>
         </div>
 			</div>
@@ -697,7 +698,7 @@
                 Даю согласие на обработку персональных данных
               </label>
             </div>
-            <button class="btn btn-xl btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+            <button class="btn btn-xl btn-plain btn-inverted" type="submit">Заказать программу обучения</button>
           </form>
         </div>
       </div>
