@@ -1,10 +1,11 @@
+import { STATE_MOD } from '../utils/constants';
 import type { TTogglerOptions } from '../utils/types';
 
 class Toggler {
   btnSel: string | null = null;
   btn: HTMLButtonElement | null = null;
   item: HTMLElement | null = null;
-  classMod: string = 'is-visible';
+  classMod: string = STATE_MOD.visible;
 
   constructor(options: TTogglerOptions) {
     this.init(options);

@@ -1,7 +1,7 @@
 import Utils from '../utils';
 import {
   SITE_API_URL,
-  FORM_STATE,
+  STATE_MOD,
   FORM_SELECTORS,
   INPUT_CLASSNAMES,
   ERROR_MESSAGES,
@@ -42,8 +42,8 @@ const handleInputHolder = (
   }
 
   isValid
-    ? inputHolder.classList.add(FORM_STATE.error)
-    : inputHolder.classList.remove(FORM_STATE.error);
+    ? inputHolder.classList.add(STATE_MOD.error)
+    : inputHolder.classList.remove(STATE_MOD.error);
 };
 
 /**
@@ -362,9 +362,9 @@ const submitForm = () => {
 
           if (success) {
             formNode.reset();
-            formHeader?.classList.add(FORM_STATE.hidden);
-            formContent?.classList.add(FORM_STATE.hidden);
-            formSuccess?.classList.remove(FORM_STATE.hidden);
+            formHeader?.classList.add(STATE_MOD.hidden);
+            formContent?.classList.add(STATE_MOD.hidden);
+            formSuccess?.classList.remove(STATE_MOD.hidden);
             window.location = uri;
           } else {
             submitBtn.disabled = true;
@@ -372,7 +372,7 @@ const submitForm = () => {
         } catch (error) {
           console.error(error);
           submitBtn.disabled = false;
-          formFailure?.classList.remove(FORM_STATE.hidden);
+          formFailure?.classList.remove(STATE_MOD.hidden);
           //formFailure.textContent = error as string;
         }
       }

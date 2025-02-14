@@ -1,5 +1,6 @@
 import Twig, { Template } from 'twig';
 import {
+  STATE_MOD,
   TPL_URL,
   SITE_API_URL
 } from '../utils/constants';
@@ -14,7 +15,7 @@ class Modal {
   titleSel: string | null = null;
   inputSel: string | null = null;
   btnSel: string = '.js-modal-btn';
-  classMod: string = 'is-visible';
+  classMod: string = STATE_MOD.visible;
   modalClass: string = 'modal';
   overlayClass: string = 'modal-overlay';
   modalOverlayClass: string = 'js-modal-overlay';

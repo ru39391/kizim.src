@@ -1,10 +1,36 @@
 import { Template } from 'twig';
 
+export type TCaptionOptions = {
+  sel: string;
+};
+
+export type TCounterOptions = {
+  sectionSel: string;
+  counterSel: string;
+};
+
+export type TCounterData = {
+  items: HTMLElement[];
+  values: number[];
+};
+
+export type TEmbedData = {
+  video?: string;
+  content?: string;
+  modalClass?: string;
+  isHeaderHidden?: number;
+  isFooterHidden?: number;
+};
+
 export type TModalOptions = {
   btnSel: string;
   overlayClass: string;
   titleSel: string;
   inputSel: string;
+};
+
+export type TPanelOptions = {
+  sel: string;
 };
 
 export type TProjectData = {
@@ -17,14 +43,6 @@ export type TProjectData = {
   picture: string;
   fill: string;
   list: string[];
-};
-
-export type TEmbedData = {
-  video?: string;
-  content?: string;
-  modalClass?: string;
-  isHeaderHidden?: number;
-  isFooterHidden?: number;
 };
 
 export type TTemplateData = {

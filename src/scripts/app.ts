@@ -3,6 +3,7 @@ import { initNavHandler } from './modules/nav';
 import { initSlides } from './modules/slides';
 import { submitForm } from './modules/forms';
 import Caption from './modules/caption';
+import Counter from './modules/counter';
 import Modal from './modules/modal';
 import Panel from './modules/panel';
 import Toggler from './modules/toggler';
@@ -35,6 +36,7 @@ const init = () => {
   initNavHandler('.js-nav-link');
   initSlides('.js-slides');
   new Caption({ sel: '.js-title' });
+  new Counter({ counterSel: '.js-value',  sectionSel: '.js-value-holder' });
   new Modal({
     btnSel: '.js-modal-btn',
     overlayClass: 'modal-overlay',

@@ -1,6 +1,4 @@
-type TPanelOptions = {
-  sel: string;
-};
+import type { TPanelOptions } from '../utils/types';
 
 class Panel {
   isScrolled: boolean = false;

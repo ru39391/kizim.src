@@ -1,6 +1,4 @@
-type TCaptionOptions = {
-  sel: string;
-}
+import type { TCaptionOptions } from '../utils/types';
 
 class Caption {
   index: number = 0;

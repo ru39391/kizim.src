@@ -22,7 +22,7 @@ const INPUT_CLASSNAMES = {
   inputOptional: 'js-optional'
 }
 
-const FORM_STATE = {
+const STATE_MOD = {
   error: 'is-error',
   visible: 'is-visible',
   hidden: 'is-hidden',
@@ -49,7 +49,7 @@ export {
   API_URL,
   TPL_URL,
   SITE_API_URL,
-  FORM_STATE,
+  STATE_MOD,
   FORM_SELECTORS,
   INPUT_CLASSNAMES,
   ERROR_MESSAGES,
