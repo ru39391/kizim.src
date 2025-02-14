@@ -25,7 +25,7 @@ class Panel {
   }
 
   scrollWindow() {
-    if (window.pageYOffset >= this.scrollHeight) {
+    if (window.scrollY >= this.scrollHeight) {
       this.item?.classList.add(this.classMod);
     } else {
       this.item?.classList.remove(this.classMod);

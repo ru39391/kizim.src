@@ -1,16 +1,33 @@
-const handleBtn = (target: HTMLElement) => {
+const scrollToTarget = (target: HTMLElement) => {
   const { href } = target.dataset;
 
   if(!href) {
     return;
   }
 
-  const section = document.querySelector(href);
+  let startTime = 0;
+  const duration = 1000;
+  const section = document.querySelector(href) as HTMLElement;
+  const windowPosition = window.scrollY;
+  const scrollHeight = section.offsetTop - windowPosition;
 
-  section?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  const handleAnimation = (currTime: number) => {
+    if(!startTime) {
+      startTime = currTime;
+    }
+
+    const timeElapsed = currTime - startTime;
+    const progress = timeElapsed / duration;
+    const easedProgress = progress * (2 - progress);
+
+    window.scrollTo(0, windowPosition + scrollHeight * easedProgress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(handleAnimation);
+    }
+  }
+
+  requestAnimationFrame(handleAnimation);
 }
 
 const initNavHandler = (sel: string) => {
@@ -26,7 +43,7 @@ const initNavHandler = (sel: string) => {
         const target = event.target as HTMLElement;
 
         event.preventDefault();
-        handleBtn(target);
+        scrollToTarget(target);
       })
     }
   );
