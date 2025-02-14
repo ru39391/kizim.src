@@ -196,6 +196,7 @@
     "row subtitle .";
   gap: 12px 16px;
   grid-area: reviews;
+  cursor: pointer;
 
   @media #{$breakpoint-up-lg} {
     gap: 24px 16px;
@@ -208,6 +209,7 @@
   letter-spacing: -0.02em;
   color: $color-white;
   grid-area: title;
+  pointer-events: none;
 
   @media #{$breakpoint-up-lg} {
     @include fs-lh(20px,24px);
@@ -217,6 +219,7 @@
 .header__reviews-row {
   @extend %d-flex-ai-center;
   grid-area: row;
+  pointer-events: none;
 }
 
 .header__reviews-item {
@@ -228,6 +231,7 @@
   @include fs-lh(10px,11px);
   letter-spacing: -0.01em;
   color: $color-gray;
+  pointer-events: none;
   margin: 0 0 0 -10px;
 
   &.header__reviews-item_type_counter {

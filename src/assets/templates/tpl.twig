@@ -47,7 +47,7 @@
 								</a>
 							{% endfor %}
 						</div>
-						<button class="nav__btn btn btn_type_row js-modal-btn" data-target="form" type="button">
+						<button class="nav__btn btn btn_type_row js-modal-btn" data-target="form" data-title="Заказать проект" type="button">
 							Заказать проект
 							<img src="src/assets/icons/arrow-icon.svg" alt=""/>
 						</button>
@@ -58,7 +58,7 @@
 	</nav>
 	<div class="header__wrapper">
 		<div class="header__top container">
-			<div class="header__reviews">
+			<div class="header__reviews js-nav-link" data-href="#testimonials">
 				<div class="header__reviews-title">Комлексное обучение<br/>для вашей команды</div>
 				<div class="header__reviews-row">
 					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
@@ -248,7 +248,7 @@
 							<div class="card__title">Структура продаж</div>
 							<div class="card__subtitle">Основные этапы и принципы работы</div>
 						</div>
-						<button class="btn btn-readmore" type="button">
+						<button class="btn btn-readmore js-modal-btn" data-target="form" data-title="Основные этапы и принципы работы" type="button">
 							Узнать подробнее о программе
 							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
 						</button>
@@ -573,7 +573,7 @@
 	</div>
 </div>
 
-<div class="section section_type_slides">
+<div id="testimonials" class="section section_type_slides">
 	<div class="section-title section-title_type_main">Отзывы</div>
 	<div class="swiper js-slides">
 		<div class="swiper-wrapper">
@@ -677,30 +677,35 @@
   <div class="modal modal_type_plain">
     <div class="modal-wrapper">
       <div class="modal-content">
-        <div class="modal-container form-container">
-          <div class="form-header">
-            <div class="form-title">Создание индивидуальной программы</div>
+        <div class="modal-container form-container js-form">
+          <div class="form-header js-form-header">
+            <div class="form-title js-form-title">Создание индивидуальной программы</div>
             <div class="form-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
           </div>
-          <form class="form form_width_max" action="#" method="post">
+          <div class="form-title js-form-content-success is-hidden">Ваша заявка принята!</div>
+          <form class="form form_width_max">
+            <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Не удалось отправить сообщение, повторите попытку позже.</div>
+            <div class="form__item is-hidden js-input-holder">
+              <input class="js-input-title js-input-field js-input-type-default" type="hidden" value="Заказать проект" name="modal__form" data-name="form" />
+            </div>
             <fieldset class="form__fieldset">
-              <div class="form__item form__item_size_xl">
-                <input class="form__field" type="text" value="" name="modal__name" placeholder="Ваше имя" />
-                <label class="form__label">Ваше имя</label>
+              <div class="form__item form__item_size_xl js-input-holder">
+                <input class="form__field js-input-field js-input-type-default" type="text" value="" name="modal__name" placeholder="Ваше имя" />
+                <span class="form-error js-error-message"></span>
               </div>
-              <div class="form__item form__item_size_xl">
-                <input class="form__field" type="tel" value="" name="modal__phone" placeholder="+7 (999) 999-99-99" />
-                <label class="form__label">+7 (999) 999-99-99</label>
+              <div class="form__item form__item_size_xl js-input-holder">
+                <input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="modal__phone" placeholder="+7 (999) 999-99-99" />
+                <span class="form-error js-error-message"></span>
               </div>
             </fieldset>
-            <div class="form-toggler-row">
-              <input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="modal__policy" checked />
+            <div class="form-toggler-row js-input-holder">
+              <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="modal__policy" checked />
               <label class="form__label form__label_fs_md" for="modal__policy">
                 <span class="form-toggler-icon"></span>
                 Даю согласие на обработку персональных данных
               </label>
             </div>
-            <button class="btn btn-xl btn-plain btn-inverted" type="submit">Заказать программу обучения</button>
+            <button class="btn btn-plain btn-inverted btn-xl js-form-submit" type="submit">Заказать программу обучения</button>
           </form>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { submitForm } from './modules/forms';
 import Modal from './modules/modal';
 import Panel from './modules/panel';
 import Toggler from './modules/toggler';
+import { FORM_SELECTORS } from './utils/constants';
 
 const renderData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -32,9 +33,17 @@ const init = () => {
   submitForm();
   initNavHandler();
   initSlides('.js-slides');
-  new Modal({ btnSel: '.js-modal-btn', overlayClass: 'modal-overlay' });
+  new Modal({
+    btnSel: '.js-modal-btn',
+    overlayClass: 'modal-overlay',
+    titleSel: FORM_SELECTORS.formTitle,
+    inputSel: FORM_SELECTORS.inputTitle
+  });
   new Panel({ sel: '.js-nav' });
-  new Toggler({ itemSel: '.js-nav', btnSel: '.js-nav-toggler' });
+  new Toggler({
+    itemSel: '.js-nav',
+    btnSel: '.js-nav-toggler'
+  });
 };
 
 const initApp = async () => {

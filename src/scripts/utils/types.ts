@@ -3,6 +3,8 @@ import { Template } from 'twig';
 export type TModalOptions = {
   btnSel: string;
   overlayClass: string;
+  titleSel: string;
+  inputSel: string;
 };
 
 export type TProjectData = {

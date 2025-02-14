@@ -11,6 +11,8 @@ import type {
 } from '../utils/types';
 
 class Modal {
+  titleSel: string | null = null;
+  inputSel: string | null = null;
   btnSel: string = '.js-modal-btn';
   classMod: string = 'is-visible';
   modalClass: string = 'modal';
@@ -25,8 +27,10 @@ class Modal {
   }
 
   init(options: TModalOptions) {
-    const { btnSel, overlayClass } = options;
+    const { btnSel, overlayClass, titleSel, inputSel } = options;
 
+    this.titleSel = titleSel;
+    this.inputSel = inputSel;
     this.btnSel = btnSel;
     this.overlayClass = overlayClass;
     this.modalBtns = Array.from(document.querySelectorAll(this.btnSel));
@@ -40,6 +44,19 @@ class Modal {
 
   setTplPath(value: string = this.modalClass) {
     return `${TPL_URL}/${value}.twig`;
+  }
+
+  setModalTitle(modal: HTMLElement, caption: string) {
+    if(!modal) {
+      return;
+    }
+
+    const title = this.titleSel ? modal.querySelector(this.titleSel) as HTMLElement : null;
+    const input = this.inputSel ? modal.querySelector(this.inputSel) as HTMLInputElement : null;
+
+    if(title) title.textContent = caption;
+
+    if(input) input.value = caption;
   }
 
   hideModal(currentTarget: HTMLElement | null) {
@@ -191,13 +208,14 @@ class Modal {
     }
   }
 
-  openModal(id: string) {
+  openModal(id: string, title: string) {
     if(!id) {
       return;
     }
 
     this.isModalPlain = true;
     this.modalOverlay = document.querySelector(`#${id}`);
+    this.setModalTitle(this.modalOverlay as HTMLElement, title);
     this.modalOverlay?.classList.add(this.classMod);
     this.modalOverlay?.addEventListener('click', (this.closeModal as EventListener).bind(this));
     document.body.style.overflow = 'hidden';
@@ -207,7 +225,13 @@ class Modal {
     event.preventDefault();
 
     const { dataset } = event.target as HTMLElement;
-    const { target, res, type, video } = dataset;
+    const {
+      res,
+      target,
+      title,
+      type,
+      video
+    } = dataset;
 
     this.isModalPlain = false;
 
@@ -220,7 +244,7 @@ class Modal {
     }
 
     if(target) {
-      this.openModal(target);
+      this.openModal(target, title);
     }
   }
 
