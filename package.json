@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "inputmask": "^5.0.9",
-    "swiper": "^11.2.2",
+    "swiper": "^8.4.7",
     "twig": "^1.17.1"
   }
 }

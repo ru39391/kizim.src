@@ -2,6 +2,7 @@ import Twig, { Template } from 'twig';
 import { initNavHandler } from './modules/nav';
 import { initSlides } from './modules/slides';
 import { submitForm } from './modules/forms';
+import Caption from './modules/caption';
 import Modal from './modules/modal';
 import Panel from './modules/panel';
 import Toggler from './modules/toggler';
@@ -31,8 +32,9 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 
 const init = () => {
   submitForm();
-  initNavHandler();
+  initNavHandler('.js-nav-link');
   initSlides('.js-slides');
+  new Caption({ sel: '.js-title' });
   new Modal({
     btnSel: '.js-modal-btn',
     overlayClass: 'modal-overlay',

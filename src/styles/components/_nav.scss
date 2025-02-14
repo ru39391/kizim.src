@@ -136,7 +136,7 @@
   }
 }
 
-.nav__link js-nav-link {
+.nav__link {
   @extend %ff-ext-medium;
   @include fs-lh(20px,24px);
   display: block;
