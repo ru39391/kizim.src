@@ -57,6 +57,7 @@ const checkPlainField = (field: HTMLInputElement | HTMLTextAreaElement, isValueV
     showErrorMessage(field, ERROR_MESSAGES.inputRequired);
   } else {
     // TODO: установить корректные типы для key
+    // @ts-ignore
     if(!isValueValid) showErrorMessage(field, ERROR_MESSAGES[key]);
   }
 

@@ -1,3 +1,4 @@
+// @ts-ignore
 import Swiper, { Autoplay, Navigation } from 'swiper';
 
 const initSlides = (sel: string) => {

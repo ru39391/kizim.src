@@ -245,7 +245,7 @@ class Modal {
     }
 
     if(target) {
-      this.openModal(target, title);
+      this.openModal(target, title as string);
     }
   }
 

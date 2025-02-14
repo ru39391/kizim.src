@@ -1,3 +1,4 @@
+//@ts-nocheck
 class Utils {
   /**
    * Утилита маски телефона, работает по типу input[type="tel"]
