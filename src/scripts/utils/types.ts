@@ -45,6 +45,10 @@ export type TProjectData = {
   list: string[];
 };
 
+export type TSectionOptions = {
+  sel: string;
+};
+
 export type TTemplateData = {
   tpl: Template | undefined;
   isSucceed: boolean;

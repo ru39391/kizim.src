@@ -40,7 +40,7 @@ class Modal {
       return;
     }
 
-    this.handleBtnEventListener();
+    this.bindEvents();
   }
 
   setTplPath(value: string = this.modalClass) {
@@ -249,7 +249,7 @@ class Modal {
     }
   }
 
-  handleBtnEventListener() {
+  bindEvents() {
     this.modalBtns.forEach(btn => btn.addEventListener('click', (this.showModal as EventListener).bind(this)));
   }
 }

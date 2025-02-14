@@ -6,6 +6,7 @@ import Caption from './modules/caption';
 import Counter from './modules/counter';
 import Modal from './modules/modal';
 import Panel from './modules/panel';
+import Section from './modules/section';
 import Toggler from './modules/toggler';
 import { FORM_SELECTORS } from './utils/constants';
 
@@ -44,6 +45,7 @@ const init = () => {
     inputSel: FORM_SELECTORS.inputTitle
   });
   new Panel({ sel: '.js-nav' });
+  new Section({ sel: '.js-section' });
   new Toggler({
     itemSel: '.js-nav',
     btnSel: '.js-nav-toggler'

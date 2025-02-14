@@ -21,7 +21,7 @@ class Panel {
 
     this.scrollHeight = this.item.scrollHeight;
 
-    this.handleEventListener();
+    this.bindEvents();
   }
 
   scrollWindow() {
@@ -34,13 +34,15 @@ class Panel {
     this.isScrolled = false;
   }
 
-  handleEventListener() {
-    window.addEventListener('scroll', () => {
-      if(!this.isScrolled) {
-        this.isScrolled = true;
-        setTimeout(() => this.scrollWindow(), 250);
-      }
-    }, false);
+  handleScrollListener() {
+    if(!this.isScrolled) {
+      this.isScrolled = true;
+      setTimeout(() => this.scrollWindow(), 250);
+    }
+  }
+
+  bindEvents() {
+    window.addEventListener('scroll', (this.handleScrollListener as EventListener).bind(this));
   }
 }
 

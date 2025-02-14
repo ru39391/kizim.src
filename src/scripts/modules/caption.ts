@@ -34,7 +34,7 @@ class Caption {
       if (i < value.length) {
         item.textContent += value.charAt(i);
         i++;
-        setTimeout(typeStr, 160);
+        setTimeout(typeStr, 90);
       } else if (clb) {
         clb();
       }
