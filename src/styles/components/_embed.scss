@@ -4,6 +4,10 @@
   overflow: hidden;
   position: relative;
 
+  &.embed_margin_bottom {
+    margin-bottom: 24px;
+  }
+
   &:before {
     content: '';
     display: block;

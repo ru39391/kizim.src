@@ -23,6 +23,11 @@
 					{% if desc %}<p>{{ desc }}</p>{% endif %}
 				</div>
 				<ul class="content__list">{% for item in list %}<li>{{ item.name }} - {{ item.desc }}</li>{% endfor %}</ul>
+        {% if video %}
+        <div class="embed embed_margin_bottom">
+          <iframe id="id-{{ video }}" class="embed__item" src="https://rutube.ru/play/embed/{{ video }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="clipboard-write; autoplay"></iframe>
+        </div>
+        {% endif %}
         {{ content }}
 			</div>
       {% endif %}

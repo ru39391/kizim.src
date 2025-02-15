@@ -44,6 +44,7 @@ class Counter {
       if (counter >= value) {
         counter = value;
         clearInterval(interval);
+        window.removeEventListener('scroll', (this.scrollPage as EventListener).bind(this));
       }
       item.textContent = counter.toString();
     }, 4000 / value);
