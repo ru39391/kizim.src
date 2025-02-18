@@ -258,6 +258,7 @@
   color: $color-white;
   grid-area: subtitle;
   max-width: 160px;
+  pointer-events: none;
 
   @media #{$breakpoint-up-lg} {
     @include fs-lh(16px,20px);
