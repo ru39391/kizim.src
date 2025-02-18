@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../utils/helpers' as *;
 
 .directions {
@@ -21,6 +22,8 @@
   @include before;
   gap: 8px 0;
   padding: 70px 0 0;
+  opacity: 0;
+  transform: translate3d(-200px, 0, 0);
 
   &:before {
     @include pos(0);
@@ -36,6 +39,19 @@
     opacity: .4;
     content: "0"counter(item);
     counter-increment: item;
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition: opacity 0.4s ease #{$i * 0.2}s, transform 0.8s ease #{$i * 0.2}s;
+    }
+  }
+}
+
+.is-visible {
+  .directions__item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 

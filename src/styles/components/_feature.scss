@@ -21,6 +21,24 @@
   }
 }
 
+.feature {
+  opacity: 0;
+  transform: translate3d(-200px, 0, 0);
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition: opacity 0.4s ease #{$i * 0.2}s, transform 0.8s ease #{$i * 0.2}s;
+    }
+  }
+}
+
+.is-visible {
+  .feature {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .feature__title {
   @include fs-lh(24px,26px);
   font-weight: 600;
