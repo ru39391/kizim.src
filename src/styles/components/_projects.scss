@@ -1,0 +1,130 @@
+@use 'sass:color';
+@use '../utils/helpers' as *;
+
+.project {
+  @extend %d-flex-column;
+  @include wh(280px,100%);
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-sm} {
+    width: 400px;
+    min-height: 480px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    width: 540px;
+    min-height: 508px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    width: 550px;
+    min-height: 755px;
+  }
+}
+
+.project__header {
+  @include before;
+  height: 200px;
+
+  @media #{$breakpoint-up-md} {
+    height: 240px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    height: 346px;
+  }
+
+  &:before {
+    @include pos(0);
+    @include wh(100%);
+    background-color: rgba(0,0,0,.2);
+  }
+}
+
+.project__img {
+  @include object-fit();
+}
+
+.project__logo {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(190px,90px);
+  @include pos(50%,50%);
+  transform: translate(-95px,-45px);
+  overflow: hidden;
+  padding: 8px 32px;
+  border-radius: 16px;
+  background-color: $color-white;
+
+  &.project__logo_bg_blur {
+    backdrop-filter: blur(14px);
+    background-color: rgba(255,255,255,.2);
+  }
+}
+
+.project__logo-img {
+  @include object-fit(contain);
+}
+
+.project__wrapper {
+  @extend %d-flex-column;
+  flex-grow: 1;
+  gap: 24px 0;
+  padding: 16px;
+
+  @media #{$breakpoint-up-xl} {
+    padding: 24px;
+  }
+}
+
+.project__content {
+  flex-grow: 1;
+}
+
+.project__title {
+  @include fs-lh(24px,30px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 4px;
+  color: $color-gray-dark;
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(32px,42px);
+  }
+}
+
+.project__subtitle {
+  @include fs-lh(16px,22px);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  color: color.adjust($color-gray-dark, $lightness: 30%);
+
+  @media #{$breakpoint-up-xl} {
+    margin: 0 0 24px;
+  }
+}
+
+.project__list {
+  @extend %d-flex-column;
+  gap: 8px 0;
+  padding: 0 0 0 4px;
+}
+
+.project__list-item {
+  @include fs-lh(16px,18px);
+  letter-spacing: -0.02em;
+  color: $color-gray-dark;
+  list-style: disc;
+  list-style-position: inside;
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(20px,22px);
+  }
+}
+
+.project__list-meta {
+  color: $color-success;
+}

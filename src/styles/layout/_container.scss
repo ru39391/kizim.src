@@ -1,0 +1,17 @@
+@use '../utils/helpers' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.container {
+  @include mx(auto);
+  @include px(16px);
+  max-width: 1648px;
+}

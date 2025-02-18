@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/twig": "^1.12.16",
     "sass": "^1.83.4",
     "typescript": "~5.6.2",
     "vite": "^5.4.9"
   },
   "dependencies": {
-    "axios": "^1.7.9",
+    "inputmask": "^5.0.9",
+    "swiper": "^8.4.7",
     "twig": "^1.17.1"
   }
 }

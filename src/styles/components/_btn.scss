@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use '../utils/helpers' as *;
+
+.btn {
+  @extend %ff-ext-medium;
+  @extend %d-flex-ai-center;
+  @include fs-lh(14px,18px);
+  gap: 0 12px;
+  padding: 4px 4px 4px 12px;
+  color: $color-white;
+  border-radius: 4px;
+  background-color: $color-darken;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.2);
+
+  &.btn-plain {
+    @extend %d-flex-column;
+    @extend %d-flex-centered;
+    @include fs-lh(16px,20px);
+    width: 100%;
+    padding: 6px 12px;
+    letter-spacing: -0.01em;
+    box-shadow: 0 0 0 6px rgba(255,255,255,.16);
+
+    @media #{$breakpoint-up-sm} {
+      padding: 18px;
+    }
+  }
+
+  &.btn-dark {
+    color: $color-white;
+    background-color: $color-brown-darker;
+    box-shadow: 0 0 0 4px color.adjust($color-gray-dark, $lightness: 55%);
+  }
+
+  &.btn-inverted {
+    color: $color-darker;
+    background-color: $color-white;
+  }
+
+  &.btn-lg {
+    padding: 18px;
+  }
+
+  &.btn-xl {
+    padding: 18px;
+
+    @media #{$breakpoint-up-xl} {
+      padding: 25px;
+    }
+  }
+
+  &:disabled {
+    opacity: .75;
+    cursor: pointer;
+  }
+}
+
+.btn-readmore {
+  @include fs-lh(16px,1);
+  letter-spacing: -0.01em;
+  text-align: left;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, .1);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .05);
+  padding: 8px 8px 8px 16px;
+  gap: 0 16px;
+  justify-content: space-between;
+}
+
+.btn-play {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(100px);
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.24);
+
+  &:before {
+    content: '';
+    transform: translateX(5px);
+    @include border(20px 0 20px 30px,rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) $color-white);
+  }
+}
+
+.btn-icon {
+  pointer-events: none;
+}

@@ -1,0 +1,275 @@
+@use '../utils/helpers' as *;
+
+.header {
+  overflow: hidden;
+  background: url(../assets/img/header-bg.jpg) no-repeat top center scroll $color-light;
+  background-size: cover;
+}
+
+.header__wrapper {
+  @extend %d-flex-column;
+  position: relative;
+  min-height: 100vh;
+  padding: 356px 0 40px;
+  background: url(../assets/img/header-pic-mobile.png) no-repeat scroll -60px bottom rgba(0,0,0,0);
+
+  @media #{$breakpoint-up-sm} {
+    gap: 45px 0;
+    padding: 285px 0 0;
+    background-position: right bottom;
+    background-image: url(../assets/img/header-pic-tablet.png);
+  }
+
+  @media #{$breakpoint-up-md} {
+    gap: 60px 0;
+    padding: 144px 0 0;
+    background-image: url(../assets/img/header-pic-desktop.png);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    gap: 52px 0;
+    background-position: center bottom;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    gap: 90px 0;
+    padding: 218px 0 0;
+    background-image: url(../assets/img/header-pic.png);
+  }
+}
+
+.header__top {
+  @extend %d-flex-column;
+  width: 100%;
+  flex-grow: 1;
+  gap: 32px 0;
+
+  @media #{$breakpoint-up-sm} {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "reviews form"
+      "title title";
+    gap: 45px;
+  }
+
+  @media #{$breakpoint-only-md} {
+    @include px(32px);
+  }
+
+  @media #{$breakpoint-up-md} {
+    gap: 140px;
+    justify-content: space-between;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    gap: 130px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    gap: 150px;
+    max-width: 1712px;
+  }
+}
+
+.header__title {
+  @include fs-lh(54px,50px);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  color: $color-white;
+  margin: 0 -4px;
+  grid-area: title;
+
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(100px,88px);
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(140px,120px);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include fs-lh(160px,140px);
+  }
+
+  @media #{$breakpoint-up-xl} {
+    @include fs-lh(180px,160px);
+    letter-spacing: -0.05em;
+  }
+}
+
+.header__bottom {
+  @include border(1px 0 0, rgba(255, 255, 255, .3));
+  width: 100%;
+  display: none;
+
+  @media #{$breakpoint-up-sm} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    border: 0;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 1712px;
+  }
+
+  &:before {
+    content: '';
+
+    @media #{$breakpoint-up-sm} {
+      @include wh(100%,1px);
+      position: absolute;
+      left: 0;
+      bottom: 108px;
+      background-color: rgba(255, 255, 255, .3);
+    }
+
+    @media #{$breakpoint-up-md} {
+      display: none;
+    }
+  }
+
+  &:after {
+    content: '';
+
+    @media #{$breakpoint-up-lg} {
+      @include wh(10000px,1px);
+      position: absolute;
+      left: 0;
+      bottom: 104px;
+      background-color: rgba(255, 255, 255, .3);
+    }
+  }
+}
+
+.header__bottom-feature {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include fs-lh(14px,18px);
+  padding: 35px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: $color-white;
+
+  @media #{$breakpoint-up-sm} {
+    @include border(0 1px 0 0, rgba(255, 255, 255, .3));
+    min-height: 108px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    padding: 34px 12px;
+    min-height: unset;
+  }
+
+  &:nth-child(2n) {
+    @media #{$breakpoint-up-sm} {
+      border-width: 0;
+    }
+
+    @media #{$breakpoint-up-lg} {
+      border-width: 0 1px 0 0;
+    }
+  }
+
+  &:last-child {
+    @media #{$breakpoint-up-lg} {
+      border-width: 0;
+    }
+  }
+}
+
+.header__reviews {
+  display: grid;
+  justify-content: flex-start;
+  grid-template-areas:
+    "title title title"
+    "row subtitle .";
+  gap: 12px 16px;
+  grid-area: reviews;
+  cursor: pointer;
+
+  @media #{$breakpoint-up-lg} {
+    gap: 24px 16px;
+  }
+}
+
+.header__reviews-title {
+  @include fs-lh(18px,22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-white;
+  grid-area: title;
+  pointer-events: none;
+
+  @media #{$breakpoint-up-lg} {
+    @include fs-lh(20px,24px);
+  }
+}
+
+.header__reviews-row {
+  @extend %d-flex-ai-center;
+  grid-area: row;
+  pointer-events: none;
+}
+
+.header__reviews-item {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @extend %ff-ext-medium;
+  @include wh(32px);
+  @include fw(32px);
+  @include fs-lh(10px,11px);
+  letter-spacing: -0.01em;
+  color: $color-gray;
+  pointer-events: none;
+  margin: 0 0 0 -10px;
+
+  &.header__reviews-item_type_counter {
+    border-radius: 50%;
+    border: 2px solid $color-white;
+    background-color: $color-gray-light;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.header__reviews-img {
+  @include object-fit();
+  border-radius: 50%;
+  border: 2px solid $color-white;
+}
+
+.header__reviews-subtitle {
+  @include fs-lh(13px,16px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: $color-white;
+  grid-area: subtitle;
+  max-width: 160px;
+  pointer-events: none;
+
+  @media #{$breakpoint-up-lg} {
+    @include fs-lh(16px,20px);
+  }
+}
+
+.header__form {
+  @extend %d-flex-column;
+  grid-area: form;
+
+  @media #{$breakpoint-up-sm} {
+    align-items: flex-end;
+  }
+}

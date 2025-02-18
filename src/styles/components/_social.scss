@@ -1,0 +1,6 @@
+@use '../utils/helpers' as *;
+
+.social {
+  @extend %d-flex-ai-center;
+  gap: 0 10px;
+}

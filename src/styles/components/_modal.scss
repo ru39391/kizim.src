@@ -1,0 +1,147 @@
+@use '../utils/helpers' as *;
+
+.modal-overlay {
+  @include wh(100%);
+  @include pos(0,0,fixed);
+  display: none;
+  z-index: 1060;
+  transition: all .3s ease;
+
+  &.is-visible {
+    display: block;
+    animation: show 0.5s;
+
+    .modal {
+      &:before {
+        background-color: rgba(0,0,0,.4);
+      }
+    }
+  }
+}
+
+.modal {
+  @include before;
+  @include wh(100%);
+  @include pos(0);
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  padding: 16px;
+
+  &:before {
+    @include wh(100%);
+    @include pos(0);
+    z-index: 1;
+    cursor: pointer;
+    transition: all .3s ease .5s;
+    background-color: rgba(0,0,0,0);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include py(80px);
+  }
+
+  &.modal_type_video {
+    .modal-wrapper {
+      padding: 0
+    }
+
+    .modal-container {
+      max-width: 100%;
+    }
+
+    .modal-content {
+      @include offset(0,0);
+      background-color: rgba(0,0,0,0);
+    }
+  }
+
+  &.modal_type_plain {
+    .modal-wrapper {
+      max-width: 480px;
+      padding: 0
+    }
+
+    .modal-content {
+      @include offset(0,32px 24px 40px);
+      border-radius: 16px;
+      background: url(../assets/img/divider-bg.jpg) no-repeat top center scroll $color-brown-dark;
+      background-size: cover;
+
+      @media #{$breakpoint-up-md} {
+        @include px(32px);
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  @extend %d-flex-column;
+  @include zi(2);
+  width: 100%;
+  max-width: 720px;
+  padding: 80px 0 0;
+  overflow: hidden;
+
+  @media #{$breakpoint-up-md} {
+    max-width: 960px;
+    padding: 120px 0 0;
+  }
+}
+
+.modal-container {
+  @include mx(auto);
+  width: 100%;
+  max-width: 720px;
+}
+
+.modal-header {
+  @extend %d-flex-column;
+  @include pos(0);
+  @include wh(100%,80px);
+  padding: 0 16px;
+  border-radius: 24px 24px 0 0;
+  background-color: $color-graphite;
+
+  @media #{$breakpoint-up-md} {
+    height: 120px;
+  }
+}
+
+.modal-header__container {
+  @extend %d-flex-column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.modal-content {
+  padding: 54px 16px 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-lg} {
+    margin-right: -16px;
+  }
+}
+
+.modal-footer {
+  padding: 24px 16px 40px;
+  border-radius: 0 0 24px 24px;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-lg} {
+    padding-bottom: 64px;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

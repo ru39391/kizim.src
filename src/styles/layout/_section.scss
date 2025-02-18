@@ -1,0 +1,204 @@
+@use '../utils/helpers' as *;
+
+.section {
+  @include py(40px,60px);
+  opacity: 0;
+  overflow: hidden;
+  background-color: $color-light;
+  transform: translate3d(0, 120px, 0);
+  transition: opacity .3s ease, transform .7s ease;
+
+  @media #{$breakpoint-up-md} {
+    padding: 80px 16px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include py(160px);
+  }
+
+  &.section_bg_logo {
+    @include before;
+    overflow: hidden;
+
+    @media #{$breakpoint-up-sm} {
+      overflow: inherit;
+    }
+
+    &:before {
+      @include pos(0);
+      bottom: 155px;
+      width: 578px;
+      z-index: 1;
+      pointer-events: none;
+      background: url(../assets/img/logo-bg-light.png) no-repeat left bottom scroll rgba(0,0,0,0);
+      background-size: 100% auto;
+
+      @media #{$breakpoint-up-sm} {
+        top: auto;
+        height: 640px;
+        bottom: -200px;
+      }
+
+      @media #{$breakpoint-up-md} {
+        @include wh(100%);
+        top: 0;
+        bottom: 0;
+        background-size: auto 100%;
+      }
+
+      @media #{$breakpoint-up-xl} {
+        background-position: -140px -60px;
+      }
+    }
+  }
+
+  &.section_bg_dark {
+    background-color: $color-brown-dark;
+
+    &.section_bg_logo {
+      &:before {
+        background-image: url(../assets/img/logo-bg-dark.png);
+      }
+    }
+  }
+
+  &.section_type_slides {
+    padding: 0 0 16px;
+    transform: translate3d(0, 0, 0);
+
+    @media #{$breakpoint-up-md} {
+      padding: 0 0 8px;
+    }
+
+    .section-title {
+      @include px(16px);
+    }
+  }
+
+  &.section_py_offset {
+    @include py(40px,60px);
+
+    @media #{$breakpoint-up-md} {
+      @include py(80px);
+    }
+
+    @media #{$breakpoint-up-lg} {
+      @include py(120px);
+    }
+
+    @media #{$breakpoint-up-xl} {
+      @include py(160px);
+    }
+  }
+
+  &.section_type_divider {
+    @include before;
+    padding: 40px 0;
+    background: url(../assets/img/divider-bg.jpg) no-repeat center top scroll $color-brown-dark;
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+
+    @media #{$breakpoint-up-md} {
+      padding: 80px 16px;
+    }
+
+    @media #{$breakpoint-up-lg} {
+      @include py(120px);
+    }
+
+    &:before {
+      @include pos(0);
+      @include wh(100%);
+      z-index: 1;
+      background: linear-gradient(113.87deg, $color-dark 19.02%, $color-brown-darken 107.88%);
+
+      @media #{$breakpoint-up-sm} {
+        width: auto;
+        right: 50%;
+      }
+    }
+
+    &:after {
+      content: '';
+
+      @media #{$breakpoint-up-sm} {
+        @include wh(50%,100%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url(../assets/img/divider-pic-mobile.png) no-repeat center bottom scroll rgba(0,0,0,0);
+      }
+
+      @media #{$breakpoint-up-md} {
+        background-image: url(../assets/img/divider-pic-tablet.png);
+      }
+
+      @media #{$breakpoint-up-lg} {
+        background-image: url(../assets/img/divider-pic-desktop.png);
+      }
+
+      @media #{$breakpoint-up-xl} {
+        background-image: url(../assets/img/divider-pic.png);
+      }
+    }
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
+    .section-title {
+      opacity: .3;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.section-container {
+  @media #{$breakpoint-up-md} {
+    gap: 0 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.section-title {
+  @include fs-lh(32px,35px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $color-gray-dark;
+  opacity: 0;
+  margin: 0 0 32px;
+  transform: translate3d(-200px, 0, 0);
+  transition: opacity .4s ease, transform .8s ease;
+
+  @media #{$breakpoint-up-sm} {
+    text-align: center;
+  }
+
+  @media #{$breakpoint-up-md} {
+    text-align: left;
+    margin: 0 0 40px;
+  }
+
+  &.section-title_type_main {
+    margin: 0 0 24px;
+
+    @media #{$breakpoint-up-sm} {
+      text-align: center;
+    }
+
+    @media #{$breakpoint-up-md} {
+      margin: 0 0 40px;
+    }
+
+    @media #{$breakpoint-up-lg} {
+      @include fs-lh(48px,52px);
+    }
+  }
+
+  &.section-title_color_white {
+    color: $color-white;
+  }
+}

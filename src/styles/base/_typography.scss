@@ -1,0 +1,13 @@
+@use 'sass:color';
+@use '../utils/helpers' as *;
+
+body {
+  @include fs-lh(15px,18px);
+  font-family: $ff-default, sans-serif;
+  color: color.adjust($color-default, $lightness: 20%);
+  background-color: $color-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}

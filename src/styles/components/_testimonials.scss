@@ -1,0 +1,103 @@
+@use 'sass:color';
+@use '../utils/helpers' as *;
+
+.testimonial-card {
+  @include wh(280px,100%);
+  max-height: 480px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: $color-white;
+
+  @media #{$breakpoint-up-sm} {
+    width: 400px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    width: 550px;
+    max-height: 560px;
+  }
+
+  &.testimonial-card_type_plain {
+    @extend %d-flex-column;
+    padding: 16px;
+    gap: 24px 0;
+
+    @media #{$breakpoint-up-xl} {
+      padding: 24px;
+    }
+
+    .testimonial-card__wrapper {
+      position: static;
+      flex-grow: 1;
+      padding: 0;
+      gap: 0;
+      justify-content: flex-start;
+    }
+
+    .testimonial-card__title {
+      @include fs-lh(16px,22px);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: $color-gray-dark;
+      margin: 0 0 2px;
+    }
+
+    .testimonial-card__subtitle {
+      @include fs-lh(14px,18px);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: color.adjust($color-gray-dark, $lightness: 50%);
+    }
+
+    .testimonial-card__desc {
+      @include fs-lh(20px,26px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: $color-gray-dark;
+      margin: 0 0 24px;
+
+      @media #{$breakpoint-up-xl} {
+        @include fs-lh(28px,36px);
+      }
+    }
+  }
+
+  &.testimonial-card_type_video {
+    position: relative;
+
+    .testimonial-card__wrapper {
+      color: $color-white;
+    }
+  }
+}
+
+.testimonial-card__img {
+  @include object-fit();
+}
+
+.testimonial-card__wrapper {
+  @extend %d-flex-column;
+  @include pos(0);
+  @include wh(100%);
+  padding: 16px;
+  gap: 2px 0;
+  justify-content: flex-end;
+}
+
+.testimonial-card__title {
+  @include fs-lh(16px,22px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.testimonial-card__subtitle {
+  @include color-white(0.5);
+  @include fs-lh(14px,18px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.testimonial-card__btn-play {
+  @include pos(50%);
+  transform: translate(-50px,-50px);
+}

@@ -1,0 +1,720 @@
+{% set icons = ['rutube', 'instagram', 'tg', 'vk', 'wapp', 'youtube'] %}
+
+<header class="header">
+	<nav class="nav js-nav">
+		<div class="nav__container container">
+			<div class="nav__header">
+				<a class="logo" href="/">
+					<span class="logo__pic"><img src="src/assets/img/logo.png" alt=""/></span>
+					<span class="logo__container">
+						<span class="logo__title">Ирина Кизим</span>
+						<span class="logo__subtitle">Стратегия | Рост | Результат</span>
+					</span>
+				</a>
+				<button class="nav__toggler js-nav-toggler" type="button">
+					<span class="nav__icon-visible"><img src="src/assets/icons/nav-icon.svg" alt=""/></span>
+					<span class="nav__icon-hidden"><img src="src/assets/icons/close-icon.svg" alt=""/></span>
+				</button>
+			</div>
+			<div class="nav__wrapper">
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a class="nav__link js-nav-link" href="#" data-href="#features">Экспертиза</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link js-nav-link" href="#">Направления деятельности</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link js-nav-link" href="#">Реализованные проекты</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link js-nav-link" href="#">Отзывы</a>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link js-nav-link" href="#" data-href="#contacts">Контакты</a>
+					</li>
+				</ul>
+				<div class="nav__footer">
+					<div class="nav__contacts contacts">
+						<a class="contacts__link" href="tel:+79508558406">+7 950 855 8406</a>
+						<a class="contacts__link" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
+					</div>
+					<div class="nav__social">
+						<div class="social">
+							{% for icon in icons %}
+								<a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+									<img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt=""/>
+								</a>
+							{% endfor %}
+						</div>
+						<button class="nav__btn btn btn_type_row js-modal-btn" data-target="form" data-title="Заказать проект" type="button">
+							Заказать проект
+							<img src="src/assets/icons/arrow-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="header__wrapper">
+		<div class="header__top container">
+			<div class="header__reviews js-nav-link" data-href="#testimonials">
+				<div class="header__reviews-title">Комлексное обучение<br/>для вашей команды</div>
+				<div class="header__reviews-row">
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item"><img class="header__reviews-img" src="src/assets/img/user-pic.jpeg" alt=""/></div>
+					<div class="header__reviews-item header__reviews-item_type_counter">+21</div>
+				</div>
+				<div class="header__reviews-subtitle">24 положительных отзыва</div>
+			</div>
+			<div class="header__title js-title" data-value="Ирина Кизим"></div>
+			<div class="header__form">
+        <div class="form-container js-form">
+          <div class="form-title js-form-content-success is-hidden">Изменения сохранены!</div>
+          <form class="form form_width_min js-form-content" action="#" method="post">
+            <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Изменения сохранены!</div>
+            <div class="form__item is-hidden js-input-holder">
+              <input class="js-input-field js-input-type-default" type="hidden" value="Форма во входном экране" name="header__form" data-name="form" />
+            </div>
+            <fieldset class="form__fieldset">
+              <div class="form__item js-input-holder">
+                <input class="form__field js-input-field js-input-type-default" type="text" value="" name="header__name" data-name="name" placeholder="Ваше имя"/>
+                <label class="form__label">Ваше имя</label>
+                <span class="form-error js-error-message"></span>
+              </div>
+              <div class="form__item js-input-holder">
+                <input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="header__phone" data-name="phone" placeholder="+7 (999) 999-99-99"/>
+                <label class="form__label">+7 (999) 999-99-99</label>
+                <span class="form-error js-error-message"></span>
+              </div>
+            </fieldset>
+            <div class="form-toggler-row js-input-holder">
+              <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="header__policy" checked />
+              <label class="form__label" for="header__policy">
+                <span class="form-toggler-icon"></span>
+                Даю согласие на обработку персональных данных
+              </label>
+            </div>
+            <button class="btn btn-plain btn-inverted js-form-submit" type="submit">Заказать программу обучения</button>
+          </form>
+        </div>
+			</div>
+		</div>
+		<div class="header__bottom container">
+			<div class="header__bottom-feature">Тренер-методолог</div>
+			<div class="header__bottom-feature">Бизнес-консультант</div>
+			<div class="header__bottom-feature">Передаю знания для решения задач</div>
+			<div class="header__bottom-feature">Эксперт-практик в области продаж, коммуникации и формирования команд</div>
+		</div>
+	</div>
+</header>
+
+<div id="features" class="section section_bg_logo js-section">
+	<div class="section-container container">
+		<div class="section-col">
+			<div class="section-title">Экспертность</div>
+			<div class="feature-list">
+				<div class="feature">
+					<div class="feature__title">Глубокое понимание сферы продаж</div>
+					<div class="feature__desc">Многолетний опыт работы на продающих и руководящих должностях в данной сфере отражается в знании особенностей и тенденций рынка, благодаря чему, погружаясь в работу компании - становятся видны возможности и пути развития для увеличения финансового результата компании.
+					</div>
+				</div>
+				<div class="feature">
+					<div class="feature__title">Cоздание высокоэффективной команды</div>
+					<div class="feature__desc">Практические навыки в построении команды и внедрении эффективных методик работы, позволяют создавать стратегии развития индивидуально для каждой компании.</div>
+				</div>
+				<div class="feature">
+					<div class="feature__title">Индивидуальный подход</div>
+					<div class="feature__desc">Пошаговый план работы в каждом проекте формируется индивидуально, после анализа текущей ситуации в команде и профессиональных компетенций каждого сотрудника, путем проведения индивидуальных интервью.</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="about js-value-holder">
+			<div class="about__item">
+				<div class="about__title">
+					<div class="about__value js-value" data-value="13">0</div>
+					<div class="about__label">лет</div>
+				</div>
+				<div class="about__desc">Практический опыт в сфере продаж</div>
+			</div>
+			<div class="about__item">
+				<div class="about__title">
+					<div class="about__value js-value" data-value="110">0</div>
+					<div class="about__label">+</div>
+				</div>
+				<div class="about__desc">Проведено мероприятий в сфере продаж</div>
+			</div>
+			<div class="about__item">
+				<div class="about__title">
+					<div class="about__value js-value" data-value="5">0</div>
+					<div class="about__label"></div>
+				</div>
+				<div class="about__desc">Жилых комплексов разработано и упаковано для последующей продажи</div>
+			</div>
+			<div class="about__item">
+				<div class="about__title">
+					<div class="about__value js-value" data-value="10">0</div>
+					<div class="about__label">лет</div>
+				</div>
+				<div class="about__desc">Практический опыт в обучении штатных сотрудников и партнеров компании</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section section_type_slides js-section">
+	<div class="section-title section-title_type_main">Обзоры в медиа</div>
+	<div class="swiper js-slides">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="card card_type_video">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/001.jpg" alt=""/>
+					<div class="card__wrapper">
+						<div class="card__header card__header_type_row">
+							<div class="card__title card__title_fs_md">«Девелопмент-Юг» нарастила долю в реализации квартир на Дальнем востоке</div>
+							<div class="card__about">
+								<img class="card__about-img" src="src/assets/img/user-pic.jpeg" alt=""/>
+								<span class="card__meta">
+									<span class="card__meta-title">Девелопмент-Юг | Владивосток</span>
+									<span class="card__meta-subtitle">Rutube</span>
+								</span>
+							</div>
+							<div class="card__date">19.10.2023</div>
+						</div>
+						<button class="card__btn-play btn-play js-modal-btn type="button" data-type="video" data-video="97de0bdec143450d09e257df4721ca66"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-nav container">
+			<button class="swiper-button swiper-button-prev" type="button">
+				<img src="src/assets/icons/chevron-right-icon.svg" alt=""/>
+			</button>
+			<button class="swiper-button swiper-button-next" type="button">
+				<img src="src/assets/icons/chevron-left-icon.svg" alt=""/>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="section section_bg_dark js-section">
+	<div class="container">
+		<div class="section-title section-title_type_main section-title_color_white">Направления деятельности</div>
+		<ul class="directions">
+			<li class="directions__item">
+				<div class="directions__title">Проект в режиме “Коммерческий Директор на аутсорсинге”</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Командные тренинги</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Индивидуальный коучинг</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Подбор и обучение новых сотрудников</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Создание коммерческого подразделения компании</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Проект в режиме «Антикризисный менеджер коммерческого подразделения»</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Анализ конкурентов компании</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Разработка и внедрение новых инструментов продаж</div>
+				<div class="directions__desc">демонстрационный этаж на строительной площадке, скрипты и алгоритмы проведения личных и телефонных переговоров, внедрение чек-листов, регламенты и инструкции</div>
+			</li>
+			<li class="directions__item">
+				<div class="directions__title">Комплексная программа обучения</div>
+				<div class="directions__desc">Анализ бизнес-процессов с последующим внедрением улучшений по всем направлениям деятельности</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="section section_type_slides section_bg_dark js-section">
+	<div class="section-title section-title_type_main section-title_color_white">Обучающие программы</div>
+	<div class="swiper js-slides">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/001.jpg" alt="Структура продаж"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Структура продаж</div>
+							<div class="card__subtitle">Основные этапы и принципы работы</div>
+						</div>
+						<button class="btn btn-readmore js-modal-btn" data-target="form" data-title="Основные этапы и принципы работы" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/002.jpg" alt="Телефонные переговоры"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Телефонные переговоры</div>
+							<div class="card__subtitle">Создание и внедрение скрипта звонка</div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/003.jpg" alt="Алгоритм проведения личной встречи"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Алгоритм проведения личной встречи</div>
+							<div class="card__subtitle">Создание пошаговой инструкции</div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/004.jpg" alt="Возражения"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Возражения</div>
+							<div class="card__subtitle">Основные типы возражений и алгоритм работы с ними</div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/005.jpg" alt="Виды влияния и способы невербальной коммуникации"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Виды влияния и способы невербальной коммуникации</div>
+							<div class="card__subtitle"></div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/006.jpg" alt="Подбор и оценка персонала"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Подбор и оценка персонала</div>
+							<div class="card__subtitle">Структура интервью, анализ кандидата и методы оценки</div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="card">
+					<img class="card__img" src="http://kizim.local/assets/images/programms/007.jpg" alt="Эффективные взаимоотношения"/>
+					<div class="card__wrapper">
+						<div class="card__header">
+							<div class="card__title">Эффективные взаимоотношения</div>
+							<div class="card__subtitle">Типы метапрограммы, основы лингвотерапии, особенности домысливания и проекций личности</div>
+						</div>
+						<button class="btn btn-readmore" type="button">
+							Узнать подробнее о программе
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-nav container">
+			<button class="swiper-button swiper-button-prev" type="button">
+				<img src="src/assets/icons/chevron-right-icon.svg" alt=""/>
+			</button>
+			<button class="swiper-button swiper-button-next" type="button">
+				<img src="src/assets/icons/chevron-left-icon.svg" alt=""/>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="section section_type_divider js-section">
+	<div class="container">
+		<div class="form-container form-container_type_col">
+			<div class="form-header">
+				<div class="form-title">Создание индивидуальной программы</div>
+				<div class="form-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
+			</div>
+			<form class="form" action="#" method="post">
+				<fieldset class="form__fieldset">
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="text" value="" name="order__name"/>
+						<label class="form__label">Ваше имя</label>
+					</div>
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="tel" value="" name="order__phone"/>
+						<label class="form__label">+7 (999) 999-99-99</label>
+					</div>
+				</fieldset>
+				<div class="form-toggler-row">
+					<input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
+					<label class="form__label form__label_fs_md" for="order__policy">
+						<span class="form-toggler-icon"></span>
+						Даю согласие на обработку персональных данных
+					</label>
+				</div>
+				<button class="btn btn-xl btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="section section_type_slides section_py_offset js-section">
+	<div class="section-title section-title_type_main">Реализованные проекты</div>
+	<div class="swiper js-slides">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/zhiloj-kvartal-r4/bg.png" alt="Жилой квартал “R4”"/>
+						<div class="project__logo project__logo_bg_blur">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/zhiloj-kvartal-r4/picture.png" alt="Жилой квартал “R4” - Специализированный Застройщик “ГРУППА”"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">Жилой квартал “R4”</div>
+							<div class="project__subtitle">Специализированный Застройщик “ГРУППА”</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="6" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/novostrojki-ru/bg.png" alt="Новостройки.ру"/>
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/novostrojki-ru/picture.png" alt="Новостройки.ру - Агентство недвижимости «Новостройки.ру» сотрудничает со всеми строительными компаниями города Владивостока, предоставляя независимую и экспертную оценку всех предложений на рынке, подбирая подходящий вариант для каждого покупателя"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">Новостройки.ру</div>
+							<div class="project__subtitle">Агентство недвижимости «Новостройки.ру» сотрудничает со всеми строительными компаниями города Владивостока, предоставляя независимую и экспертную оценку всех предложений на рынке, подбирая подходящий вариант для каждого покупателя</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="7" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/dom-rf-bank/bg.png" alt="ДОМ.РФ Банк"/>
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/dom-rf-bank/picture.png" alt="ДОМ.РФ Банк - Уполномоченный банк в сфере жилищного строительства"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">ДОМ.РФ Банк</div>
+							<div class="project__subtitle">Уполномоченный банк в сфере жилищного строительства</div>
+							<ul class="project__list">
+								<li class="project__list-item">
+									Передано инструментов для эффективной работы
+									<span class="project__list-meta">23</span>
+								</li>
+								<li class="project__list-item">
+									Часов обучения
+									<span class="project__list-meta">5</span>
+								</li>
+							</ul>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="8" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/dom-rf-development/bg.png" alt="ДОМ.РФ Девелопмент"/>
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/dom-rf-development/picture.png" alt="ДОМ.РФ Девелопмент - Федеральный девелопер полного цикла с 100% государственным участием, является подразделением института развития ДОМ.РФ"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">ДОМ.РФ Девелопмент</div>
+							<div class="project__subtitle">Федеральный девелопер полного цикла с 100% государственным участием, является подразделением института развития ДОМ.РФ</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="9" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/makromir/bg.png" alt="Макромир"/>
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/makromir/picture.png" alt="Макромир - Маркетплейс риэлторских услуг"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">Макромир</div>
+							<div class="project__subtitle">Маркетплейс риэлторских услуг</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="10" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/nmarket-pro/picture.png" alt="Нмаркет.ПРО - Cистема бронирования недвижимости по всей России для риелторов"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">Нмаркет.ПРО</div>
+							<div class="project__subtitle">Cистема бронирования недвижимости по всей России для риелторов</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="11" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/strojlend/bg.png" alt="Стройленд"/>
+						<div class="project__logo">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/strojlend/picture.png" alt="Стройленд - Строительство каркасных домов"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">Стройленд</div>
+							<div class="project__subtitle">Строительство каркасных домов</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="12" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="project">
+					<div class="project__header">
+						<img class="project__img" src="http://kizim.local/assets/images/projects/dns-development/bg.png" alt="DNS Девелопмент"/>
+						<div class="project__logo project__logo_bg_blur">
+							<img class="project__logo-img" src="http://kizim.local/assets/images/projects/dns-development/picture.png" alt="DNS Девелопмент - DNS Девелопмент — это инвестиционно-девелоперская компания, которая является отдельным подразделением группы компаний DNS и занимает лидирующие позиции на рынке Дальнего Востока"/>
+						</div>
+					</div>
+					<div class="project__wrapper">
+						<div class="project__content">
+							<div class="project__title">DNS Девелопмент</div>
+							<div class="project__subtitle">DNS Девелопмент — это инвестиционно-девелоперская компания, которая является отдельным подразделением группы компаний DNS и занимает лидирующие позиции на рынке Дальнего Востока</div>
+						</div>
+						<button class="btn btn-readmore btn-dark js-modal-btn" data-res="6" type="button">
+							Cмотреть видеообзор
+							<img src="src/assets/icons/arrow-readmore-icon.svg" alt=""/>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-nav container">
+			<button class="swiper-button swiper-button_bordered swiper-button-prev" type="button">
+				<img src="src/assets/icons/chevron-right-icon.svg" alt=""/>
+			</button>
+			<button class="swiper-button swiper-button_bordered swiper-button-next" type="button">
+				<img src="src/assets/icons/chevron-left-icon.svg" alt=""/>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div id="testimonials" class="section section_type_slides js-section">
+	<div class="section-title section-title_type_main">Отзывы</div>
+	<div class="swiper js-slides">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="testimonial-card testimonial-card_type_plain">
+					<div class="testimonial-card__header"><img src="src/assets/icons/blockquote-icon.svg" alt=""/></div>
+					<div class="testimonial-card__wrapper">
+						<div class="testimonial-card__desc">Delectus sit rerum. Omnis quibusdam voluptatum ad labore rerum reiciendis. Quasi amet repellat.</div>
+						<div class="testimonial-card__title">Ростелеком</div>
+						<div class="testimonial-card__subtitle">Сотовый оператор</div>
+					</div>
+					<div class="testimonial-card__footer">
+						<div class="testimonial-card__title">Ростелеком</div>
+						<div class="testimonial-card__subtitle">Сотовый оператор</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="testimonial-card testimonial-card_type_video">
+					<img class="testimonial-card__img" src="src/assets/img/user-pic.jpeg" alt=""/>
+					<div class="testimonial-card__wrapper">
+						<div class="testimonial-card__title">Дикси</div>
+						<div class="testimonial-card__subtitle">Звучит не очень</div>
+					</div>
+					<button class="testimonial-card__btn-play btn-play js-modal-btn type="button" data-type="video" data-video="cac7f250de2f518630f986993aebba2b"></button>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-nav container">
+			<button class="swiper-button swiper-button_bordered swiper-button-prev" type="button">
+				<img src="src/assets/icons/chevron-right-icon.svg" alt=""/>
+			</button>
+			<button class="swiper-button swiper-button_bordered swiper-button-next" type="button">
+				<img src="src/assets/icons/chevron-left-icon.svg" alt=""/>
+			</button>
+		</div>
+	</div>
+</div>
+
+
+<footer id="contacts" class="footer js-section">
+	<div class="footer__top container">
+		<div class="form-container form-container_gap_xl">
+			<div class="form-title form-title_fs_xl">Заказать консультацию</div>
+			<form class="form form_width_max" action="#" method="post">
+				<fieldset class="form__fieldset">
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="text" value="" name="order__name"/>
+						<label class="form__label">Ваше имя</label>
+					</div>
+					<div class="form__item form__item_size_xl">
+						<input class="form__field" type="tel" value="" name="order__phone"/>
+						<label class="form__label">+7 (999) 999-99-99</label>
+					</div>
+				</fieldset>
+				<div class="form-toggler-row">
+					<input class="form-toggler form-toggler_type_checkbox" type="checkbox" id="order__policy"/>
+					<label class="form__label form__label_fs_md" for="order__policy">
+						<span class="form-toggler-icon"></span>
+						Даю согласие на обработку персональных данных
+					</label>
+				</div>
+				<button class="btn btn-xl btn-plain btn-inverted" type="button">Заказать программу обучения</button>
+			</form>
+		</div>
+	</div>
+	<div class="footer__bottom container">
+		<div class="footer__col footer__col_type_row footer__col_width_lg">
+			<a class="logo" href="/">
+				<span class="logo__pic"><img src="src/assets/img/logo.png" alt=""/></span>
+				<span class="logo__container">
+					<span class="logo__title logo__title_color_white">Ирина Кизим</span>
+					<span class="logo__subtitle">Стратегия | Рост | Результат</span>
+				</span>
+			</a>
+			<nav class="footer__nav">
+				<a class="footer__nav-link" href="#">Экспертиза</a>
+				<a class="footer__nav-link" href="#">Направления деятельности</a>
+				<a class="footer__nav-link" href="#">Реализованные проекты</a>
+				<a class="footer__nav-link" href="#">Отзывы</a>
+				<a class="footer__nav-link" href="#">Контакты</a>
+			</nav>
+		</div>
+		<div class="footer__col footer__col_type_row footer__col_width_sm">
+			<div class="contacts">
+				<a class="contacts__link contacts__link_color_white" href="tel:+79508558406">+7 950 855 8406</a>
+				<a class="contacts__link contacts__link_color_white" href="mailto:ir.kizim@yandex.ru">ir.kizim@yandex.ru</a>
+			</div>
+			<div class="social">
+				{% for icon in icons %}
+					<a class="social__link" href="#" rel="nofollow" target="_blank" title="{{icon}}">
+						<img src="{{ 'src/assets/icons/' ~ icon ~ '-icon.svg' }}" alt=""/>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div id="form" class="modal-overlay">
+  <div class="modal modal_type_plain">
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <div class="modal-container form-container js-form">
+          <div class="form-header js-form-header">
+            <div class="form-title js-form-title">Создание индивидуальной программы</div>
+            <div class="form-desc">Заполните контактные данные для формирования программы обучения исходя из Ваших задач</div>
+          </div>
+          <div class="form-title js-form-content-success is-hidden">Ваша заявка принята!</div>
+          <form class="form form_width_max">
+            <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Не удалось отправить сообщение, повторите попытку позже.</div>
+            <div class="form__item is-hidden js-input-holder">
+              <input class="js-input-title js-input-field js-input-type-default" type="hidden" value="Заказать проект" name="modal__form" data-name="form" />
+            </div>
+            <fieldset class="form__fieldset">
+              <div class="form__item form__item_size_xl js-input-holder">
+                <input class="form__field js-input-field js-input-type-default" type="text" value="" name="modal__name" placeholder="Ваше имя" />
+                <span class="form-error js-error-message"></span>
+              </div>
+              <div class="form__item form__item_size_xl js-input-holder">
+                <input class="form__field js-input-field js-input-type-phone" type="tel" value="" name="modal__phone" placeholder="+7 (999) 999-99-99" />
+                <span class="form-error js-error-message"></span>
+              </div>
+            </fieldset>
+            <div class="form-toggler-row js-input-holder">
+              <input class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" id="modal__policy" checked />
+              <label class="form__label form__label_fs_md" for="modal__policy">
+                <span class="form-toggler-icon"></span>
+                Даю согласие на обработку персональных данных
+              </label>
+            </div>
+            <button class="btn btn-plain btn-inverted btn-xl js-form-submit" type="submit">Заказать программу обучения</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  // TODO:
+  1) отправка и сохранение сообщений;
+  2) приложение для видео - уведомления в модальном окне, валидация для id
+-->

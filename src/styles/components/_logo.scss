@@ -1,0 +1,49 @@
+@use 'sass:color';
+@use '../utils/helpers' as *;
+
+.logo {
+  @extend %ff-ext-medium;
+  @extend %d-flex-ai-center;
+  gap: 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.logo__pic {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(48px);
+  @include fw(48px);
+  border-radius: 7px;
+  background-color: $color-white;
+}
+
+.logo__container {
+  @extend %d-flex-column;
+  gap: 2px 0;
+}
+
+.logo__title {
+  @include fs-lh(16px,20px);
+
+  &.logo__title_color_white {
+    color: $color-white;
+  }
+}
+
+.logo__subtitle {
+  @include fs-lh(14px,18px);
+  font-weight: 400;
+  white-space: nowrap;
+  color: color.adjust($color-white, $lightness: -30%);
+}
+
+.logo-company {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(80px);
+  padding: 8px;
+  transform: translateY(50%);
+  border-radius: 16px;
+  border: 4px solid $color-white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+}

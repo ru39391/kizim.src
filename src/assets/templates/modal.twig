@@ -1,0 +1,63 @@
+{% set panelLogoSel = sibling.isBlurred ? 'panel__logo panel__logo_bg_blur' : 'panel__logo' %}
+{% set logoCompanyFill = logoFill ? logoFill : fill %}
+{% set currModalClass = modalClass ? 'modal modal_type_' ~ modalClass : 'modal' %}
+
+<div class="{{ currModalClass }}">
+	<div class="modal-wrapper">
+    {% if isHeaderHidden != 1 %}
+		<div class="modal-header" style="background-color:{{ fill }};">
+			<div class="modal-header__container modal-container">
+				<div class="logo-company" style="background-color:{{ logoCompanyFill }};">
+					<img class="logo-company__img" src="{{ logo }}" alt="{{ name }}"/>
+				</div>
+			</div>
+		</div>
+    {% endif %}
+		<div class="modal-content">
+      {% if isHeaderHidden == 1 %}
+        {{ content }}
+      {% else %}
+			<div class="content modal-container">
+				<div class="content__intro">
+					<h1>{{ name }}</h1>
+					{% if desc %}<p>{{ desc }}</p>{% endif %}
+				</div>
+				<ul class="content__list">{% for item in list %}<li>{{ item.name }} - {{ item.desc }}</li>{% endfor %}</ul>
+        {% if video|length > 0 %}
+          {% for id in video %}
+          <div class="embed embed_margin_bottom">
+            <iframe id="id-{{ id }}" class="embed__item" src="https://rutube.ru/play/embed/{{ id }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="clipboard-write; autoplay"></iframe>
+          </div>
+          {% endfor %}
+        {% endif %}
+        {{ content }}
+			</div>
+      {% endif %}
+		</div>
+    {% if isFooterHidden != 1 %}
+		<div class="modal-footer">
+			<div class="modal-container">
+				<div class="panel">
+					<div class="panel__aside" style="background-color:{{ sibling.fill }};">
+						{% if sibling.bg %}<img class="panel__bg" src="{{ sibling.bg }}" alt="{{ sibling.name }}" />{% endif %}
+						<div class="{{ panelLogoSel }}">
+							<img class="panel__img" src="{{ sibling.picture }}" alt="{{ sibling.name }}" />
+						</div>
+					</div>
+					<div class="panel__wrapper">
+						<div class="panel__header">
+							<div class="panel__title">{{ sibling.name }}</div>
+							<div class="panel__subtitle">{{ sibling.desc }}</div>
+						</div>
+						<div class="panel__footer">
+							<button class="panel__btn js-modal-btn" type="button" data-res="{{ sibling.id }}">Смотреть следующий проект
+								<span>-></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    {% endif %}
+	</div>
+</div>

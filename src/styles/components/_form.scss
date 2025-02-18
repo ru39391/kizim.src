@@ -1,0 +1,249 @@
+@use '../utils/helpers' as *;
+
+.form {
+  @media #{$breakpoint-up-md} {
+    max-width: 480px;
+  }
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 720px;
+  }
+
+  &.form_width_min {
+    max-width: 328px;
+  }
+
+  &.form_width_max {
+    max-width: 424px;
+
+    @media #{$breakpoint-up-xl} {
+      max-width: 720px;
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form-container {
+  @extend %d-flex-column;
+  @include zi(2);
+  gap: 32px 0;
+
+  &.form-container_type_col {
+    @media #{$breakpoint-up-sm} {
+      width: 50%;
+      padding: 0 16px 0 0;
+    }
+
+    @media #{$breakpoint-up-md} {
+      padding: 0 32px 0 0;
+    }
+  }
+
+  &.form-container_gap_xl {
+    @media #{$breakpoint-up-xl} {
+      row-gap: 64px;
+    }
+  }
+}
+
+.form-header {
+  @extend %d-flex-column;
+  gap: 8px 0;
+
+  @media #{$breakpoint-up-xl} {
+    max-width: 720px;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form-title {
+  @include fs-lh(24px,1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $color-white;
+
+  @media #{$breakpoint-up-xl} {
+    font-size: 40px;
+  }
+
+  &.form-title_fs_xl {
+    @media #{$breakpoint-up-md} {
+      font-size: 32px;
+    }
+
+    @media #{$breakpoint-up-xl} {
+      @include fs-lh(80px,72px);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      max-width: 720px;
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form-desc {
+  @include fs-lh(16px,22px);
+  @include color-white(0.3);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+
+  &.form-desc_type_error {
+    color: $color-error;
+    margin-bottom: 16px;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form__fieldset {
+  @extend %d-flex-column;
+  border: 0;
+  gap: 8px 0;
+  margin: 0 0 16px;
+}
+
+.form__item {
+  overflow: hidden;
+  position: relative;
+
+  &.form__item_size_xl {
+    .form__field {
+      @media #{$breakpoint-up-xl} {
+        @include fs-lh(18px,24px);
+        padding: 24px 16px;
+      }
+
+      & + .form__label {
+        @media #{$breakpoint-up-xl} {
+          @include fs-lh(18px,24px);
+          padding: 24px 16px;
+        }
+      }
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &.is-error {
+    .form-error {
+      display: block;
+    }
+  }
+}
+
+.form-error {
+  @include fs-lh(12px,16px);
+  @include pos(0,16px);
+  display: none;
+  pointer-events: none;
+  color: $color-error;
+}
+
+.form__field {
+  @include fs-lh(16px,22px);
+  font-weight: 500;
+  width: 100%;
+  padding: 16px;
+  color: rgba(255, 255, 255, .5);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, .1);
+
+  & + .form__label {
+    @include pos(0,0);
+    @include fs-lh(16px,22px);
+    font-weight: 500;
+    right: 0;
+    height: 100%;
+    padding: 16px;
+    display: none;
+    pointer-events: none;
+  }
+
+  &:focus + .form__label {
+    display: none;
+  }
+}
+
+.form__label {
+  @include fs-lh(14px,1);
+  font-weight: 600;
+  color: rgba(255, 255, 255, .5);
+
+  &.form__label_fs_md {
+    @media #{$breakpoint-up-xl} {
+      font-size: 16px;
+    }
+  }
+}
+
+.form-toggler-row {
+  margin: 0 0 40px;
+}
+
+.form-toggler {
+  & + .form__label {
+    @extend %d-flex-ai-center;
+    gap: 0 8px;
+    cursor: pointer;
+  }
+
+  &.form-toggler_type_checkbox {
+    display: none;
+
+    &:checked + .form__label {
+      .form-toggler-icon {
+        &:before {
+          display: block;
+        }
+
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.form-toggler-icon {
+  @include before;
+  @include wh(24px);
+  @include fw(24px);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, .5);
+
+  &:before {
+    @include wh(14px,2px);
+    left: 6px;
+    bottom: 4px;
+    display: none;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+    background-color: rgba(255, 255, 255, .5);
+  }
+
+  &:after {
+    @include wh(6px,2px);
+    content: '';
+    position: absolute;
+    left: 4px;
+    bottom: 9px;
+    display: none;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
