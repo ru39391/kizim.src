@@ -16,11 +16,13 @@
   @include before;
   @include fw(120px);
   max-width: 100%;
+  display: none;
   position: relative;
   background-color: $color-graphite;
 
   @media #{$breakpoint-up-sm} {
     @include fw(180px);
+    display: block;
   }
 
   &:before {

@@ -4,6 +4,7 @@
 
 <div class="{{ currModalClass }}">
 	<div class="modal-wrapper">
+	  <button class="modal-close js-modal-close" type="button">&times;</button>
     {% if isHeaderHidden != 1 %}
 		<div class="modal-header" style="background-color:{{ fill }};">
 			<div class="modal-header__container modal-container">
@@ -23,14 +24,14 @@
 					{% if desc %}<p>{{ desc }}</p>{% endif %}
 				</div>
 				<ul class="content__list">{% for item in list %}<li>{{ item.name }} - {{ item.desc }}</li>{% endfor %}</ul>
+        {{ content }}
         {% if video|length > 0 %}
           {% for id in video %}
-          <div class="embed embed_margin_bottom">
+          <div class="embed embed_margin_top">
             <iframe id="id-{{ id }}" class="embed__item" src="https://rutube.ru/play/embed/{{ id }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="clipboard-write; autoplay"></iframe>
           </div>
           {% endfor %}
         {% endif %}
-        {{ content }}
 			</div>
       {% endif %}
 		</div>

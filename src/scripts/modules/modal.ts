@@ -15,11 +15,13 @@ class Modal {
   titleSel: string | null = null;
   inputSel: string | null = null;
   btnSel: string = '.js-modal-btn';
+  btnCloseSel: string = '.js-modal-close';
   classMod: string = STATE_MOD.visible;
   modalClass: string = 'modal';
   overlayClass: string = 'modal-overlay';
   modalOverlayClass: string = 'js-modal-overlay';
   modalOverlay: HTMLElement | null = null;
+  btnClose: HTMLElement | null = null;
   modalBtns: HTMLElement[] = [];
   isModalPlain: boolean = false;
 
@@ -45,6 +47,14 @@ class Modal {
 
   setTplPath(value: string = this.modalClass) {
     return `${TPL_URL}/${value}.twig`;
+  }
+
+  handleModalClose(modal: HTMLElement) {
+    if(!modal) {
+      return;
+    }
+
+    this.btnClose = modal.querySelector(this.btnCloseSel) as HTMLElement;
   }
 
   setModalTitle(modal: HTMLElement, caption: string) {
@@ -86,7 +96,7 @@ class Modal {
       currentTarget: event.currentTarget as HTMLElement,
     };
 
-    if(target.parentElement === currentTarget) {
+    if(target.parentElement === currentTarget || target === this.btnClose) {
       this.hideModal(currentTarget);
     }
   }
@@ -120,6 +130,7 @@ class Modal {
     ].forEach(className => this.modalOverlay?.classList.add(className as string));
 
     btn?.addEventListener('click', (this.changeModal as EventListener).bind(this));
+    this.handleModalClose(item as HTMLElement);
     this.modalOverlay.addEventListener('click', (this.closeModal as EventListener).bind(this));
     this.modalOverlay.append(item);
     document.body.append(this.modalOverlay);
@@ -216,6 +227,7 @@ class Modal {
 
     this.isModalPlain = true;
     this.modalOverlay = document.querySelector(`#${id}`);
+    this.handleModalClose(this.modalOverlay as HTMLElement);
     this.setModalTitle(this.modalOverlay as HTMLElement, title);
     this.modalOverlay?.classList.add(this.classMod);
     this.modalOverlay?.addEventListener('click', (this.closeModal as EventListener).bind(this));
