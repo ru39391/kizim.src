@@ -201,4 +201,8 @@
   &.section-title_color_white {
     color: $color-white;
   }
+
+  &.section-title_tt_unset {
+    text-transform: unset;
+  }
 }

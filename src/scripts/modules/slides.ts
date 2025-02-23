@@ -10,7 +10,7 @@ const initSlides = (sel: string) => {
 
   const slides: Swiper[] = items.map(() => new Swiper(sel, {
     slidesPerView: 'auto',
-    loop: true,
+    loop: false,
     grabCursor: true,
     centeredSlides: false,
     modules: [Autoplay, Navigation],
@@ -22,7 +22,8 @@ const initSlides = (sel: string) => {
       forceToAxis: true
     },
     autoplay: {
-      delay: 2500,
+      delay: 4500,
+      stopOnLastSlide: true,
       pauseOnMouseEnter: true,
       disableOnInteraction: false
     },
