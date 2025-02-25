@@ -336,6 +336,7 @@ const submitForm = () => {
 
       const formData = serializeForm(formNode);
       const validate = validateForm(formNode);
+      const { ym: yaMetricaId } = formNode.dataset;
       const values = Array.from(formData.entries()).reduce((acc, item) => {
         const [key, value] = item;
         const { dataset } = formNode.querySelector(`[name="${key}"]`) as HTMLInputElement;
@@ -362,6 +363,8 @@ const submitForm = () => {
           const { data: { uri }, success } = await response.json();
 
           if (success) {
+            // @ts-expect-error
+            ym(Number(yaMetricaId),'reachGoal','lead');
             formNode.reset();
             formHeader?.classList.add(STATE_MOD.hidden);
             formContent?.classList.add(STATE_MOD.hidden);
