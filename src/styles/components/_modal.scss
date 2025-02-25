@@ -3,6 +3,7 @@
 .modal-overlay {
   @include wh(100%);
   @include pos(0,0,fixed);
+  overflow: auto;
   display: none;
   z-index: 1060;
   transition: all .3s ease;
@@ -21,10 +22,11 @@
 
 .modal {
   @include before;
-  @include wh(100%);
   @include pos(0);
   @extend %d-flex-column;
   @extend %d-flex-centered;
+  width: 100%;
+  min-height: 100vh;
   padding: 16px;
 
   &:before {
