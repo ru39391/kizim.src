@@ -16,6 +16,12 @@
     @include py(160px);
   }
 
+  &.section_type_nofx {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   &.section_bg_logo {
     @include before;
     overflow: hidden;

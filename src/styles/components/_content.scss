@@ -3,6 +3,27 @@
 .content {
   color: $color-content;
 
+  &.content_type_container {
+    max-width: 1280px;
+
+    h1 {
+      margin: 0 0 32px;
+    }
+
+    h2 {
+      margin: 16px 0;
+    }
+
+    p {
+      line-height: 1.4;
+      margin: 0 0 16px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
   h1 {
     @include fs-lh(28px,1);
     font-weight: 700;
