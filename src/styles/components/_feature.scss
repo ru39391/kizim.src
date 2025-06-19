@@ -51,10 +51,26 @@
     @include fs-lh(32px,35px);
     margin: 0 0 12px;
   }
+
+  @media #{$breakpoint-up-sm} {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:after {
+    @media #{$breakpoint-up-sm} {
+      content: '';
+      display: none;
+    }
+  }
 }
 
 .feature__desc {
   @include fs-lh(15px,18px);
   color: $color-default;
   opacity: .8;
+
+  @media #{$breakpoint-up-sm} {
+    display: block;
+  }
 }

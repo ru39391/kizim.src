@@ -17,6 +17,10 @@
   color: $color-white;
   transition: all .3s ease;
 
+  &.nav_bg_dark {
+    background-color: $color-dark;
+  }
+
   &.is-active {
     background-color: $color-dark;
   }
