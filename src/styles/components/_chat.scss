@@ -12,10 +12,6 @@
   background: linear-gradient(74.57deg, $color-default -1.06%, $color-brown 90.2%);
 }
 
-.chat-link__icon {
-  @include object-fit();
-}
-
 @keyframes pulseOut {
   0% {
     transform: scale(.8);

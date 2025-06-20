@@ -1,3 +1,9 @@
+@use './mixins' as *;
+
 .td-underline {
   text-decoration: underline;
+}
+
+.icon-fluid {
+  @include object-fit();
 }
