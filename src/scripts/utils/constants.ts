@@ -1,3 +1,5 @@
+import { setBaseUrl } from './';
+
 const FORM_SELECTORS = {
   form: '.js-form',
   formContent: '.js-form-content',
@@ -39,7 +41,7 @@ const ERROR_MESSAGES = {
   maxLengthInvalid: 'Значение слишком длинное'
 };
 
-const SITE_URL = import.meta.env.VITE_SITE_URL;
+const SITE_URL = setBaseUrl() || import.meta.env.VITE_SITE_URL;
 const API_URL = import.meta.env.VITE_API_URL;
 const TPL_URL = import.meta.env.VITE_TPL_URL;
 const SITE_API_URL = `${SITE_URL}${API_URL}`;

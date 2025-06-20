@@ -1,3 +1,15 @@
+const setBaseUrl = (): string => {
+  const baseItem = document.querySelector('base');
+
+  if(!baseItem) {
+    return '';
+  }
+
+  const { href } = baseItem;
+
+  return href.slice(0, -1);
+}
+
 //@ts-nocheck
 class Utils {
   /**
@@ -58,4 +70,5 @@ class Utils {
   }
 }
 
+export { setBaseUrl };
 export default Utils;
