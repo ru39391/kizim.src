@@ -1,0 +1,28 @@
+@use '../utils/helpers' as *;
+
+.chat-link {
+  @include wh(56px);
+  padding: 4px;
+  position: fixed;
+  right: 24px;
+  bottom: 48px;
+  z-index: 1040;
+  border-radius: 50%;
+  animation: pulseOut 2s ease-out infinite;
+  background: linear-gradient(74.57deg, $color-default -1.06%, $color-brown 90.2%);
+}
+
+@keyframes pulseOut {
+  0% {
+    transform: scale(.8);
+    opacity: .75;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(.8);
+    opacity: .75;
+  }
+}

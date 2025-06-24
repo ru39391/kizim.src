@@ -142,18 +142,46 @@
 
 .nav__link {
   @extend %ff-ext-medium;
+  @include before;
   @include fs-lh(20px,24px);
   display: block;
   padding: 12px 0;
   letter-spacing: -0.01em;
+  transition: all .3s ease;
 
   @media #{$breakpoint-up-md} {
-    padding: 0 30px 0 0;
+    padding: 8px 30px 8px 0;
   }
 
   @media #{$breakpoint-up-lg} {
     @include fs-lh(15px,18px);
-    padding: 0;
+    padding: 10px 0;
+  }
+
+  &:before {
+    @include wh(100%,3px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: $color-hover;
+    transform: rotateY(90deg);
+    transition: all .5s ease;
+
+    @media #{$breakpoint-up-lg} {
+      display: block;
+    }
+  }
+
+  &:hover {
+    @media #{$breakpoint-up-lg} {
+      color: $color-hover;
+      transform: scale(1.08);
+    }
+
+    &:before {
+      transform: rotateY(0);
+    }
   }
 }
 

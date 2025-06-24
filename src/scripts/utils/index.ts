@@ -1,4 +1,16 @@
 //@ts-nocheck
+const setBaseUrl = (): string => {
+  const baseItem = document.querySelector('base');
+
+  if(!baseItem) {
+    return '';
+  }
+
+  const { href } = baseItem;
+
+  return href.slice(0, -1);
+}
+
 class Utils {
   /**
    * Утилита маски телефона, работает по типу input[type="tel"]
@@ -58,4 +70,5 @@ class Utils {
   }
 }
 
+export { setBaseUrl };
 export default Utils;
