@@ -1,15 +1,73 @@
 @use '../utils/helpers' as *;
 
-.chat-link {
-  @include wh(56px);
-  padding: 4px;
+.chat-items {
+  @extend %d-flex-column;
+  flex-direction: column-reverse;
   position: fixed;
   right: 24px;
   bottom: 48px;
   z-index: 1040;
+
+  &.is-active {
+    gap: 12px 0;
+
+    .chat-items__icon {
+      transform: translateX(-100%);
+    }
+
+    .chat-items__btn {
+      &.chat-items__btn_type_toggler {
+        animation: none;
+        background: $color-darken;
+      }
+
+      &.chat-items__btn_type_link {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: inherit;
+        position: relative;
+      }
+    }
+  }
+}
+
+.chat-items__btn {
+  @include wh(56px);
+  @extend %d-flex-ai-center;
+  padding: 4px;
   border-radius: 50%;
-  animation: pulseOut 2s ease-out infinite;
   background: linear-gradient(74.57deg, $color-default -1.06%, $color-brown 90.2%);
+
+  &.chat-items__btn_type_toggler {
+    @include zi(2);
+    overflow: hidden;
+    animation: pulseOut 2s ease-out infinite;
+  }
+
+  &.chat-items__btn_type_link {
+    @include zi(1);
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transition: all .3s ease #{($i - 1) * 0.2}s;
+        transform: translateY(#{($i - 1) * 100%});
+      }
+    }
+  }
+}
+
+.chat-items__icon {
+  @include fw(100%);
+  padding: 8px;
+  pointer-events: none;
+  transition: all .3s ease;
+
+  &.chat-items__icon_type_close {
+    padding: 16px;
+  }
 }
 
 @keyframes pulseOut {
