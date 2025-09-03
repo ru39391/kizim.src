@@ -92,6 +92,13 @@
       display: grid;
     }
   }
+
+  &.card__header_bg_blur {
+    border-radius: 8px;
+    padding: 8px 8px 8px 16px;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, .1);
+  }
 }
 
 .card__title {
